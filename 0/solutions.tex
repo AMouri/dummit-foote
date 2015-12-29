@@ -35,4 +35,16 @@ Suppose $f$ is injective. We must show that $f$ is surjective. Let $n$ be the ca
 Suppose $f$ is surjective. We must show that $f$ is injective. For every $b \in B$, the fiber of $f$ over $b$ has a cardinality of at least 1, and moreover each fiber of $f$ is disjoint. Let $\alpha$ be the set containing the elements of all fibers of $f$ over $b$. If there are $n$ elements of $B$, then the cardinality of $\alpha$ must be at least $n$. But there are $n$ elements of $A$, so the cardinality of $\alpha$ must be exactly $n$. In particular, $\alpha = A$. Furthermore, the cardinality of each fiber of $f$ is exactly 1, and since each fiber of $f$ is disjoint, then for any $a_1, a_2 \in \alpha$, $a_1$ and $a_2$ cannot be in the same fiber of $f$. Therefore, $f(a_1) \neq f(a_2)$, showing that $f$ is injective.
 \end{itemize}
 
+\subsection*{Proposition 2}
+Let $A$ be a nonempty set.
+\begin{itemize}
+\item[(1)] If $\sim$ defines an equivalence relation on $A$ then the set of equivalent classes of $\sim$ form a partition of $A$.
+\item[(2)] If $\left\lbrace A_i | i \in I \right\rbrace$ is a partition of $A$, then there is an equivalence relation on $A$ whose equivalence classes are precisely the sets $A_i, i \in I$.
+\end{itemize}
+\emph{Proof:}
+\begin{itemize}
+\item[(1)] Suppose $\sim$ defines an equivalence relation on $A$. Since every element of $A$ is part of an equivalent class of $\sim$ and each equivalent class of $\sim$ cannot contain elements not in $A$, then the union of all equivalent classes of $\sim$ is equivalent to $A$. Now we must show that each equivalent class of $\sim$ is disjoint. Suppose for sake of contradiction that $a \in A$ is a member of at least two separate equivalent classes. Consider two such equivalent classes $\eta_1$ and $\eta_2$. Suppose without loss of generality that $a$ is the only equivalent class in $\eta_1$. But $\eta_1$ cannot be an equivalent class, since $\eta_1 \subseteq \eta_2$. Thus, suppose $\eta_1$ and $\eta_2$ have at least one additional element each: let $b \in \eta_1$ and $c \in \eta_2$. So $b \sim a$ and $a \sim c$. By the transitive property of equivalence relations, then $b \sim c$. But then $b$ and $c$ must be part of the same equivalent class. Therefore, $\eta_1$ and $\eta_2$ cannot be equivalent classes. By contradiction, $a$ can be a member of at most one equivalent class. Therefore, the set of equivalent classes of $\sim$ form a partition of $A$.
+\item[(2)] Let $\left\lbrace A_i | i \in I \right\rbrace$ be a partition of $A$. Define a binary relation on $A$ as follows: for every $a, b \in A$, $a \sim b$ if $a, b \in A_i$ for some $i \in I$. If $a = b$, then clearly $a \sim b$. Additionally, it is clear that if $a \sim b$, then $b \sim a$. Further, if $a \sim b$ and $b \sim c$, then $a$ and $c$ must be in the same partition, so therefore $a \sim c$. Therefore, $\sim$ is an equivalence relation. Additionally, from the definition of $\sim$, then for some $a \in A$, the equivalence class of $a$ contains precisely the elements of $A$ that are part of the same partition of $a$. This completes the proof.
+\end{itemize}
+
 \end{document}
