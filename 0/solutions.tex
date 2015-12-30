@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-
+\usepackage{amsmath}
 \begin{document}
 \title{Preliminaries}
 \author{Alec Mouri}
@@ -7,14 +7,6 @@
 \maketitle
 \section{Basics}
 \subsection*{Proposition 1}
-Let $f : A \rightarrow B$.
-\begin{itemize}
-\item[(1)] The map $f$ is injective iff $f$ has a left inverse.
-\item[(2)] The map $f$ is surjective iff $f$ has a right inverse.
-\item[(3)] The map $f$ is a bijection iff $\exists$ $g: B \rightarrow A$ such that $f \circ g$ is the identity map on $B$ and $g \circ f$ is the identity map on $A$.
-\item[(4)] If $A$ and $B$ are finite sets with the same number of elements, then $f : A \rightarrow B$ is bijective iff $f$ is injective iff $f$ is surjective.
-\end{itemize}
-\emph{Proof:}
 \begin{itemize}
 \item[(1)] Let $f$ be injective. Then for every $a \in A$, $f(a)$ is unique. Let $\beta = \left\lbrace f(a) \right\rbrace_{a \in A}$. Note that $\beta \subseteq B$. Define $g : B \rightarrow A$ as follows - for every $b \in \beta$ where $b = f(a)$ for some $a \in A$, then let $g(b) = a$. Moreover, for every $c \in B$ where $c \not \in \beta$, then $g(c)$ maps to some arbitrary element of $A$. $g \circ f$ is a mapping $A \rightarrow A$ where for $a \in A$, $(g \circ f)(a) = g(b) = a$. Therefore, $f$ has a left inverse $g$.
 
@@ -36,15 +28,100 @@ Suppose $f$ is surjective. We must show that $f$ is injective. For every $b \in 
 \end{itemize}
 
 \subsection*{Proposition 2}
-Let $A$ be a nonempty set.
-\begin{itemize}
-\item[(1)] If $\sim$ defines an equivalence relation on $A$ then the set of equivalent classes of $\sim$ form a partition of $A$.
-\item[(2)] If $\left\lbrace A_i | i \in I \right\rbrace$ is a partition of $A$, then there is an equivalence relation on $A$ whose equivalence classes are precisely the sets $A_i, i \in I$.
-\end{itemize}
-\emph{Proof:}
 \begin{itemize}
 \item[(1)] Suppose $\sim$ defines an equivalence relation on $A$. Since every element of $A$ is part of an equivalent class of $\sim$ and each equivalent class of $\sim$ cannot contain elements not in $A$, then the union of all equivalent classes of $\sim$ is equivalent to $A$. Now we must show that each equivalent class of $\sim$ is disjoint. Suppose for sake of contradiction that $a \in A$ is a member of at least two separate equivalent classes. Consider two such equivalent classes $\eta_1$ and $\eta_2$. Suppose without loss of generality that $a$ is the only equivalent class in $\eta_1$. But $\eta_1$ cannot be an equivalent class, since $\eta_1 \subseteq \eta_2$. Thus, suppose $\eta_1$ and $\eta_2$ have at least one additional element each: let $b \in \eta_1$ and $c \in \eta_2$. So $b \sim a$ and $a \sim c$. By the transitive property of equivalence relations, then $b \sim c$. But then $b$ and $c$ must be part of the same equivalent class. Therefore, $\eta_1$ and $\eta_2$ cannot be equivalent classes. By contradiction, $a$ can be a member of at most one equivalent class. Therefore, the set of equivalent classes of $\sim$ form a partition of $A$.
 \item[(2)] Let $\left\lbrace A_i | i \in I \right\rbrace$ be a partition of $A$. Define a binary relation on $A$ as follows: for every $a, b \in A$, $a \sim b$ if $a, b \in A_i$ for some $i \in I$. If $a = b$, then clearly $a \sim b$. Additionally, it is clear that if $a \sim b$, then $b \sim a$. Further, if $a \sim b$ and $b \sim c$, then $a$ and $c$ must be in the same partition, so therefore $a \sim c$. Therefore, $\sim$ is an equivalence relation. Additionally, from the definition of $\sim$, then for some $a \in A$, the equivalence class of $a$ contains precisely the elements of $A$ that are part of the same partition of $a$. This completes the proof.
+\end{itemize}
+\subsection*{Exercises}
+\begin{itemize}
+\item[(1)]
+$$X_1 = \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}$$
+Since $X_1 = M$, then clearly $X_1 \in \mathcal{B}$
+$$X_2 = \begin{pmatrix}
+1 & 1 \\
+1 & 1
+\end{pmatrix}, X_2M = \begin{pmatrix}
+1 & 2 \\
+1 & 2
+\end{pmatrix}, MX_2 = \begin{pmatrix}
+2 & 2 \\
+1 & 1
+\end{pmatrix} \rightarrow X_2 \not \in \mathcal{B}$$
+$$X_3 = \begin{pmatrix}
+0 & 0 \\
+0 & 0
+\end{pmatrix}, X_3M = MX_3 = \begin{pmatrix}
+0 & 0 \\
+0 & 0
+\end{pmatrix} \rightarrow X_3 \in \mathcal{B}$$
+$$X_4 = \begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix}, X_4M = \begin{pmatrix}
+1 & 2 \\
+1 & 1
+\end{pmatrix}, MX_4 = \begin{pmatrix}
+2 & 1 \\
+1 & 0
+\end{pmatrix} \rightarrow X_4 \not \in \mathcal{B}$$
+$$X_5 = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}, X_5M = MX_5 = \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix} \rightarrow X_5 \in \mathcal{B}$$
+$$X_6 = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}, X_6M = \begin{pmatrix}
+1 & 1 \\
+1 & 1
+\end{pmatrix}, MX_6 = \begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix} \rightarrow X_6 \not \in \mathcal{B}$$
+\item[(2)]
+$$M(P + Q) = MP + MQ = PM + QM = (P + Q)M$$
+Since $M(P + Q) = (P + Q)M$, then $P + Q \in \mathcal{B}$
+\item[(3)]
+$$M(PQ) = (MP)Q = (PM)Q = P(MQ) = P(QM) = (PQ)M$$
+Since $MPQ = PQM$, then $PQ \in \mathcal{B}$
+\item[(4)]
+Let
+$$X = \begin{pmatrix}
+p & q \\
+r & s
+\end{pmatrix}$$
+$$MX = \begin{pmatrix}
+p + r & q + s \\
+r & s
+\end{pmatrix} = XM = \begin{pmatrix}
+p & p + q \\
+r & r + s
+\end{pmatrix}$$
+We can see that the following conditions need to be satisfied:
+$$r = 0$$
+$$p = s$$
+Then, $X$ has the following form:
+$$X = \begin{pmatrix}
+p & q \\
+0 & p
+\end{pmatrix}$$
+\item[(5)]
+\begin{itemize}
+\item[(a)] $f$ is not well defined. For example, $\frac{3}{2}$ has an additional rational representation $\frac{6}{4}$. It is ambiguous whether $f\left(\frac{3}{2}\right)$ either equals 3 or 6.
+\item[(b)] $f$ is well defined. Note that if $\frac{a}{b} = \frac{c}{d}$, then $\frac{a^2}{b^2} = \frac{c^2}{d^2}$, so $f\left(\frac{a}{b}\right) = f\left(\frac{c}{d}\right) = \frac{c^2}{d^2}$
+\end{itemize}
+\item[(6)] $f$ is not well defined. Each integer has two real representations - ending in all 0s or ending in all 9s. For instance, the integer 1 has two representations: 1.000... or 0.999.... It is ambiguous then whether $f(1)$ either equals 0 or 9.
+\item[(7)] First we must show that $\sim$ is an equivalence relation. \\
+Reflexive: Since $f(a) = f(a)$, then $a \sim a$. \\
+Symmetric: If $a \sim b$, then $f(a) = f(b)$, and $f(b) = f(a)$. Therefore, $b \sim a$. \\
+Transitive. If $a \sim b$ and $b \sim c$, then $f(a) = f(b) = f(c)$. Therefore, $a \sim c$. \\
+$\sim$ is therefore an equivalence relation. Now we must show that the equivalence classes of $\sim$ are precisely the fibers of $f$. Consider an equivalence class $X$ of $\sim$. Fix $x \in X$. For every element $a \in X$, $a \sim x$, and therefore $f(a) = b$ for a particular $b \in B$. So the equivalent class $X$ is the fiber of $f$ over $b$. Now consider the fiber $\alpha$ of $f$ over $b$. For all $a \in A$, we have $a \in \alpha$ if and only if $f(a) = f(x)$ for some $x \in X$. That is, $a \sim x$, and therefore $\alpha$ is an equivalence class of $sim$.
 \end{itemize}
 
 \end{document}
