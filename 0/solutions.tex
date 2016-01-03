@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb, listings}
 \begin{document}
 \title{Preliminaries}
 \author{Alec Mouri}
@@ -122,6 +122,135 @@ Reflexive: Since $f(a) = f(a)$, then $a \sim a$. \\
 Symmetric: If $a \sim b$, then $f(a) = f(b)$, and $f(b) = f(a)$. Therefore, $b \sim a$. \\
 Transitive. If $a \sim b$ and $b \sim c$, then $f(a) = f(b) = f(c)$. Therefore, $a \sim c$. \\
 $\sim$ is therefore an equivalence relation. Now we must show that the equivalence classes of $\sim$ are precisely the fibers of $f$. Consider an equivalence class $X$ of $\sim$. Fix $x \in X$. For every element $a \in X$, $a \sim x$, and therefore $f(a) = b$ for a particular $b \in B$. So the equivalent class $X$ is the fiber of $f$ over $b$. Now consider the fiber $\alpha$ of $f$ over $b$. For all $a \in A$, we have $a \in \alpha$ if and only if $f(a) = f(x)$ for some $x \in X$. That is, $a \sim x$, and therefore $\alpha$ is an equivalence class of $sim$.
+\end{itemize}
+
+\section{Properties of the Integers}
+\begin{itemize}
+\item[(1)]
+\begin{itemize}
+\item[(a)]Applying the Euclidean Algorithm:
+$$20 = (1)13 + 7$$
+$$13 = (1)7 + 6$$
+$$7 = (1)6 + 1$$
+$$1 = (1)1$$
+Thus the gcd of $20$ and $13$ is 1. The lcm is $(20 \cdot 13) / 1 = 260$. Now applying the generated equations in reverse order:
+$$1 = (1)(7 - 6) = (1)7 - (1)6$$
+$$1 = (1)7 - (1)(13 - 7) = (2)7 - (1)13$$
+$$1 = (2)(20 - 13) - (1)13 = (2)20 - 3(13)$$
+\item[(b)] Applying the Euclidean Algorithm:
+$$372 = (5)69 + 27$$
+$$69 = (2)27 + 15$$
+$$27 = (1)15 + 12$$
+$$15 = (1)12 + 3$$
+$$12 = (4)3$$
+Thus the gcd of $372$ and $69$ is 3. The lcm is $(372 \cdot 69) / 3 = 8556$. Now applying the generated equations in reverse order:
+$$3 = 15 - (1)12$$
+$$3 = 15 - (1)(27 - 15) = (2)15 + (-1)27$$
+$$3 = (2)(69 - (2)27) + (-1)(27) = (2)69 + (-5)27$$
+$$3 = (2)69 + (-5)(372 - (5)69) = (27)69 + (-5)372$$
+\item[(c)] Applying the Euclidean Algorithm:
+$$792 = (2)275 + 242$$
+$$275 = (1)242 + 33$$
+$$242 = (7)33 + 11$$
+$$33 = (3)11$$
+Thus the gcd of $792$ and $275$ is 11. The lcm is $(792 \cdot 275) / 11 = 19800$. Now applying the generated equations in reverse order:
+$$11 = (1)242 - 7(33)$$
+$$11 = (1)242 - 7(275 - 242) = (8)242 - (7)275$$
+$$11 = (8)(792 - (2)275) - (7)275 = (8)792 - (23)275$$
+\item[(d)] Applying the Euclidean Algorithm:
+$$11391 = (2)5673 + 45$$
+$$5673 = (126)45 + 3$$
+$$45 = (15)3$$
+Thus the gcd of $11391$ and $5673$ is 3. The lcm is $(11391 \cdot 5673) / 3 = 21540381$. Now applying the generated equations in reverse order:
+$$3 = 5673 - (126)45$$
+$$3 = 5673 - (126)(11391 - (2)5673) = (253)5673 - (126)11391$$
+\item[(e)] Applying the Euclidean Algorithm:
+$$1761 = (1)1567 + 194$$
+$$1567 = (8)194 + 15$$
+$$194 = (12)15 + 14$$
+$$15 = (1)14 + 1$$
+$$14 = (14)1$$
+Thus the gcd of $1761$ and $1567$ is 1. The lcm is $(1761 \cdot 1567) / 1 = 2759487$. Now applying the generated equations in reverse order:
+$$1 = 15 - 14$$
+$$1 = 15 - (194 - (12)15) = (13)15 - 194$$
+$$1 = (13)(1567 - (8)194) - 194 = (13)1567 - (105)194$$
+$$1  (13)1567 - (105)(1761 - 1567) = (118)1567 - (105)1761$$
+\item[(f)] Applying the Euclidean Algorithm:
+$$507885 = (8)60808 + 21421$$
+$$60808 = (2)21421 + 17966$$
+$$21421 = (1)17966 + 3455$$
+$$17966 = (5)3455 + 691$$
+$$3455 = (5)691$$
+Thus the gcd of $507885$ and $60808$ is 691. The lcm is $(507885 \cdot 60808) / 691 = 44693880$. Now applying the generated equations in reverse order:
+$$691 = 17966 - (5)3455$$
+$$691 = 17966 - (5)(21421 - 17966) = (6)17966 - (5)21421$$
+$$691 = (6)(60808 - (2)21421) - (5)21421 = (6)(60808) - (17)21421$$
+$$691 = (6)60808 - (17)(507885 - (8)60808)$$
+$$691 = (142)60808 - (17)507885$$
+\end{itemize}
+\item[(2)]
+If $k \in \mathbb{Z}$ divides the integers $a$ and $b$, then for some $m, n \in \mathbb{Z}$, $a = km$ and $b = kn$. Therefore,
+$$as + bt = kms + knt = k(ms + nt) = kx$$
+where $x = ms + nt$. Since $s, t \in \mathbb{Z}$, then $x = ms + nt \in \mathbb{Z}$. Therefore, $k$ must divide $as + bt$.
+\item[(3)]
+Suppose $n \in \mathbb{Z}$ is composite. Then $n = ab$ for some nonzero $a, b \in \mathbb{Z}$ such that $a, b \neq \pm 1$. Clearly, $n$ divides $ab$. Suppose for sake of contradiction without loss of generality that $n | a$. Then for some $x \in \mathbb{Z}$, $nx = a$. Therefore, we have $abx = a \rightarrow a(bx - 1) = 0 \rightarrow bx = 1 \rightarrow x = \frac{1}{b}$. But since $b \neq \pm 1$, then $x$ cannot be an integer. So by contradiction, $n \not | a$.
+\item[(4)]
+Let $x_0$ and $y_0$ be particular solutions to $ax + by = N$. We want to show that we also have the general solutions
+$$x = x_0 + \frac{b}{d}t \text{ and } y = y_0 - \frac{a}{d}t$$
+Substituting, we have
+$$a\left(x_0 + \frac{b}{d}t\right) + b\left(y_0 - \frac{a}{d}t\right) = ax_0 + by_0 + \frac{ab}{d}t - \frac{ab}{d}t = ax_0 + by_0 = N$$
+\item[(5)]
+$$\varphi(1) = 1$$
+$$\varphi(2) = 1$$
+$$\varphi(3) = 2$$
+$$\varphi(4) = 2$$
+$$\varphi(5) = 4$$
+$$\varphi(6) = \varphi(2)\varphi(3) = 2$$
+$$\varphi(7) = 6$$
+$$\varphi(8) = \varphi(2^3) = 2^2(2 - 1) = 4$$
+$$\varphi(9) = \varphi(3^2) = 3(3 - 1) = 6$$
+$$\varphi(10) = \varphi(2)\varphi(5) = 4$$
+$$\varphi(11) = 10$$
+$$\varphi(12) = \varphi(3)\varphi(4) = 4$$
+$$\varphi(13) = 12$$
+$$\varphi(14) = \varphi(2)\varphi(7) = 6$$
+$$\varphi(15) = \varphi(3)\varphi(5) = 8$$
+$$\varphi(16) = \varphi(2^4) = 2^3(2 - 1) = 8$$
+$$\varphi(17) = 16$$
+$$\varphi(18) = \varphi(2)\varphi(9) = 6$$
+$$\varphi(19) = 18$$
+$$\varphi(20) = \varphi(4)\varphi(5) = 8$$
+$$\varphi(21) = \varphi(3)\varphi(7) = 12$$
+$$\varphi(22) = \varphi(2)\varphi(11) = 10$$
+$$\varphi(23) = 22$$
+$$\varphi(24) = \varphi(3)\varphi(8) = 8$$
+$$\varphi(25) = \varphi(5^2) = 5(5 - 1) = 20$$
+$$\varphi(26) = \varphi(2)\varphi(13) = 12$$
+$$\varphi(27) = \varphi(3^3) = 3^2(3 - 1) = 18$$
+$$\varphi(28) = \varphi(4)\varphi(7) = 12$$
+$$\varphi(29) = 28$$
+$$\varphi(30) = \varphi(2)\varphi(15) = 8$$
+\item[(6)] We shall proceed by means of induction. \\
+Base Case: Let $A$ be a subset of $\mathbb{Z}^+$ of size 1. Clearly, $A$ has a minimal element - the single element of $A$. If $a$ is the element in $A$, then $a = a$. \\
+Now suppose for all subsets of $\mathbb{Z}^+$ of size at most $k$, that each subset has a unique minimal element. Let $B$ be a subset of $\mathbb{Z}^+$ of size $k + 1$. We can partition $B$ into two subsets: $B_1$ and $B_k$. $B_k$ is a set of size $k$, and $B_1$ is a set of size 1. $B_k$ has a minimal element - call it $m$. Let $b$ be the element in $B_1$. If $m < b$, then $m$ is the minimal element of $B$. If $m > b$, then $b$ is the minimal element of $B$, since $b$ must necessarily be smaller than every element of $B_k$. Note that $m \neq b$ since $m$ and $b$ are in separate partitions of $B$, so therefore the minimal element must be unique.
+\item[(7)] Suppose there exist nonzero integers $a$ and $b$ such that $a^2 = pb^2$, and that for sake of contradiction that $p$ is prime. By the fundamental theorem of arthemetic, we can express $a$ and $b$ as a product of distinct primes:
+$$a = p_1^{\alpha_1}p_2^{\alpha_2}...p_n^{\alpha_n}, b = p_1^{\beta_1}p_2^{\beta_2}...p_n^{\beta_n}$$
+where the exponents are nonnegative integers. Let $p = p_1$. Then
+$$\frac{a^2}{b^2} = \frac{\left(p^{\alpha_1}p_2^{\alpha_2}p_3^{\alpha_3}...p_n^{\alpha_n} \right)^2}{\left(p^{\beta_1}p_2^{\beta_2}p_3^{\beta_3}...p_n^{\beta_n} \right)^2} = \frac{p^{2\alpha_1}p_2^{2\alpha_2}p_3^{2\alpha_3}...p_n^{2\alpha_n}}{p^{2\beta_1}p_2^{2\beta_2}p_3^{2\beta_3}...p_n^{2\beta_n}} = p$$
+Then $alpha_2 = \alpha_3 = ... = \alpha_n = \beta_2 = \beta_3 = ... = \beta_n$ and $2\alpha_1 - 2\beta_1 = 1$ But then $\alpha_1 - \beta_1 = \frac{1}{2}$, contradicting that $\alpha_1$ and $\beta_1$ are integers. Therefore, $p$ must be composite.
+\item[(8)]
+Fix a prime $p$. Let $a$ be the highest power of $p$ that divides $n!$. That is, $p^a$ divides $n!$. Note that as $n$ increases to $n+1$, then $(n+1)!$ will have an additional factor $n+1$, which by the fundamental theorem of arithmetic can be decomposed into primes. If $p$ divides $n+1$, then additional factors of $p$ are added, increasing $a$. Furthermore, if $p^i$ divides $n+1$, for some $i > 0$, then at least $i$ factors of $p$ are added. In particular, if $p^i$ divides $n+1$, then $p$, $p^2$, ..., $p^{i-1}$ also divide $n+1$. So, we can simply count the number of times each power of $p$ divides into $1, 2, .., n+1$. In particular, the number of multiples of $p$ less than $n$ is $\left[ \frac{n}{p} \right]$ (this fact is a consequence of the Division Algorithm: $n = xp + r$ for $0 \leq r < p \rightarrow \frac{n}{p} = x + \frac{r}{p} \rightarrow \left[ \frac{n}{p} \right] = x$). Using these fact, we then have the following equation for obtaining the highest power of $p$ that divides $n!$:
+$$a = \displaystyle\sum_{i=1}^\infty \left[\frac{n}{p^i} \right]$$
+\item[(9)]
+See 2-9.py
+\item[(10)]
+Recall that for any $n = p_1^{\alpha_1}p_2^{\alpha_2}...p_s^{\alpha_s}$, where $p_1, p_2, ..., p_s$ are primes and each exponent is $\geq 0$, that $$\varphi(n) = p_1^{\alpha_1 - 1}(p_1 - 1)p_2^{\alpha_2 - 1}(p_2 - 1)...p_s^{\alpha_s - 1}(p_s - 1)$$
+Now we wish to determine for a fixed $N \in \mathbb{Z}^+$ whether there are finitely many integers $n$ such that $\varphi(n) = N$. We can see that for each prime $p$ that is a member of the prime factorization of $n$ (ie. if $p^\beta$ is the highest power of $p$ that divides into $n$, then $\beta > 0$), that $p < N$ from the equation we have recalled above. Since $N$ is finite, there are then a finite number of possible primes that can be members of the prime factorization of a particular $n$. Furthermore, there are a finite number of permutations of primes that can be used to generate all $n$ such that $\varphi(n) = N$. Therefore, there are finitely many integers $n$ such that $\varphi(n) = N$. As $n$ approaches infinity, the largest prime that can be a member of its prime factorization will also approach infinity. Therefore, $\varphi(n)$ also approaches infinity.
+\item[(11)] Suppose $d$ divides $n$. Then for some $a \in \mathbb{Z}^+$, then $n = da$. Suppose $d$ and $a$ have the following prime factorizations:
+$$d = p_1^{\alpha_1}p_2^{\alpha_2}...p_s^{\alpha_s}r_1^{a_1}r_2^{a_2}...r_x^{a_x}$$
+$$a = q_1^{\beta_1}q_2^{\beta_2}...q_t^{\beta_t}r_1^{b_1}r_2^{b_2}...r_x^{b_x}$$
+Ie. $r_1, r_2, ..., r_x$ are the common primes of the prime factorizations of $d$ and $a$.
+Then $\varphi(n) = \varphi(da) = p_1^{\alpha_1 - 1}(p_1 - 1)p_2^{\alpha_2 - 1}(p_2 - 1)...p_s^{\alpha_s - 1}(p_s - 1)q_1^{\beta_1 - 1}(q_1 - 1)q_2^{\beta_2 - 1}(q_2 - 1)...q_t^{\beta_t - 1}(q_t - 1)r_1^{a_1+b_1-1}(r_1 - 1)r_2^{a_2+b_2 - 1}(r_2 - 1)...r_x^{a_x+b_x - 1}(r_x - 1)$. Note that $\varphi(d) = p_1^{\alpha_1 - 1}(p_1 - 1)p_2^{\alpha_2 - 1}(p_2 - 1)...p_s^{\alpha_s - 1}(p_s - 1)r_1^{a_1-1}(r_1 - 1)r_2^{a_2 - 1}(r_2 - 1)...r_x^{a_x - 1}(r_x - 1)$. Therefore, $\varphi(n) = \varphi(d)q_1^{\beta_1 - 1}(q_1 - 1)q_2^{\beta_2 - 1}(q_2 - 1)...q_t^{\beta_t - 1}(q_t - 1)r_1^{b_1}r_2^{b_2}...r_x^{b_x}$. Thus, $\varphi(d)$ divides $\varphi(n)$.
 \end{itemize}
 
 \end{document}
