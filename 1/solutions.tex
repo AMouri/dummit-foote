@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\begin{document}
+\title{Introduction to Groups}
+\author{Alec Mouri}
+
+\maketitle
+\section{Basic Axioms and Examples}
+\subsection*{Exercises}
+\begin{itemize}
+\item[(1)]
+\begin{itemize}
+\item[(a)] No. Let $a = 2, b = 3, c + 4$.
+$$(2 - 3) - 4 = -5$$
+$$2 - (3 - 4) = 3$$
+\item[(b)] Yes. Consider $a, b, c \in \mathbb{R}$
+$$a * b = a + b + ab$$
+$$(a * b) * c = a + b + ab + c + (a + b + ab)c = a + b + c + ab + ac + bc + abc$$
+$$= a + (b + c + bc) + a(b + c + bc) = a * (b * c)$$
+\item[(c)] No. Let $a = 1, b = 2, c = 3$
+$$(a * b) * c = \frac{\frac{1 + 2}{5} + 3}{5} = \frac{18}{25}$$
+$$a * (b * c) = \frac{1 + \frac{2 + 3}{5}}{5} = \frac{10}{25}$$
+\item[(d)] Yes. Consider $(a, b), (c, d), (e, f) \in \mathbb{Z} \times \mathbb{Z}$.
+$$(a, b) * (c, d) = (ad + bc, bd)$$
+$$((a, b) * (c, d)) * (e, f) = ((ad + bc)f + bde, bdf) = (adf + bcf + bde, bdf)$$
+$$= (a(df) + b(cf + de), b(df)) = (a, b) * ((c, d) * (e, f))$$
+\item[(e)] No. Let $a = 2, b = 3, c = 4$.
+$$(a * b) * c = \frac{\frac{2}{3}}{4} = \frac{1}{6}$$
+$$a * (b * c) = \frac{2}{\frac{3}{4}} = \frac{8}{3}$$
+\end{itemize}
+\item[(2)]
+\begin{itemize}
+\item[(a)] No. Let $a = 1$ and $b = 2$.
+$$a * b = 1 - 2 = -1$$
+$$b * a = 2 - 1 = 1$$
+\item[(b)]Yes.
+$$a * b = a + b + ab = b + a + ba = b * a$$
+\item[(c)] Yes.
+$$a * b = \frac{a + b}{5} = \frac{b + a}{5} = b * a$$
+\item[(d)] Yes.
+$$(a, b) * (c, d) = (ad + bc, bd) = (cb + da, db) = (c, d) * (a, b)$$
+\item[(e)] No. Let $a = 2$ and $b = 3$
+$$a * b = \frac{2}{3}$$
+$$b * a = \frac{3}{2}$$
+\end{itemize}
+\item[(3)]
+$$(\overline{a} + \overline{b}) + \overline{c} = \overline{a + b} + \overline{c} = \overline{a + b + c} = \overline{a} + \overline{b + c} = \overline{a} + (\overline{b} + \overline{c})$$
+\item[(4)]
+$$(\overline{a} \cdot \overline{b})\overline{c} = \overline{ab} \cdot \overline{c} = \overline{abc} = \overline{a} \cdot \overline{bc} = \overline{a}(\overline{b} \cdot \overline{c})$$
+\item[(5)]
+Consider 0 $\in \mathbb{Z}/n\mathbb{Z}$. Suppose 0 is an identity of $\mathbb{Z}/n\mathbb{Z}$. Then $a0 \equiv a \mod n$. But this is clearly false for $a \not \equiv 0 \mod n$. Then, 0 cannot be an identity of $\mathbb{Z}/n\mathbb{Z}$. But then for all $a \in \mathbb{Z}/n\mathbb{Z}$, $a0 \equiv 0 \mod n$, implying that the inverse of 0 does not exist. Therefore, $mathbb{Z}/n\mathbb{Z}$ is not a group under multiplication of residue classes.
+\item[(6)]
+For brevity, let $\mathcal{A}$ be the proposed group in question.
+\begin{itemize}
+\item[(a)]
+Consider $\frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in \mathcal{A}$. Then
+$$\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$$
+Note that since $b, d$ are odd, then $bd$ has no factors of 2 in its prime decomposition. Therefore, $\frac{ad + bc}{bd}$ will have an odd denominator if reduced to lowest terms. So, addition is a binary operation over $\mathcal{A}$. Furthermore, 
+$$\left(\frac{a}{b} + \frac{c}{d} \right) + \frac{e}{f} = \frac{ad + bc}{bd} + \frac{e}{f} = \frac{adf + bcf + bde}{bdf}$$
+$$ = \frac{a}{b} + \frac{cf + bd}{df} = \frac{a}{b} + \left(\frac{c}{d} + \frac{b}{f}\right)$$
+Therefore, addition is associative over $\mathcal{A}$. We also have $\frac{0}{1} + \frac{a}{b} = \frac{a}{b} = \frac{0}{1}$, so $\frac{0}{1}$ is an identity under $\mathcal{A}$. And, $\frac{a}{b} + \frac{-a}{b} = 0 = \frac{-a}{b} + \frac{a}{b}$, so $\frac{-a}{b}$ is an inverse of $\frac{a}{b}$. Thus $\mathcal{A}$ is a group under addition.
+\item[(b)]$\mathcal{A}$ is not a group under addition. Consider $a = \frac{1}{2}$ and $b = \frac{1}{6}$. Then
+$$a + b = \frac{1}{2} + \frac{1}{6} = \frac{2}{3} \not \in \mathcal{A}$$
+Thus, addition is not a binary operation over $\mathcal{A}$.
+\item[(c)]$\mathcal{A}$ is not a group under addition. Consider $a = \frac{1}{2}$ and $b = \frac{2}{3}$. Then
+$$a + b = \frac{1}{2} + \frac{2}{3} = \frac{7}{6} \not \in \mathcal{A}$$
+Thus, addition is not a binary operation over $\mathcal{A}$.
+\item[(d)]
+$\mathcal{A}$ is not a group under addition. Consider $a = \frac{3}{2}$ and $b = \frac{-1}{1}$. Then
+$$a + b = \frac{3}{2} + \frac{-1}{1} = \frac{1}{2} \not \in \mathcal{A}$$
+Thus, addition is not a binary operation over $\mathcal{A}$.
+\item[(e)]
+Consider $\frac{a}{b}, \frac{c}{d}, \frac{e}{f} \in \mathcal{A}$. Then
+$$\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$$
+Note that since $b, d$ are either 1 or 2, then $bd$ equals either 1, 2, or 4. $bd = 4$ if $b = d = 2$. But then 2 divides $ad + bc$, so then $\frac{ad + bc}{bd} = \frac{a + c}{2}$, so $\frac{ad + bc}{bd} \in \mathcal{A}$. Furthermore, 
+$$\left(\frac{a}{b} + \frac{c}{d} \right) + \frac{e}{f} = \frac{ad + bc}{bd} + \frac{e}{f} = \frac{adf + bcf + bde}{bdf}$$
+$$ = \frac{a}{b} + \frac{cf + bd}{df} = \frac{a}{b} + \left(\frac{c}{d} + \frac{b}{f}\right)$$
+Therefore, addition is associative over $\mathcal{A}$. We also have $\frac{0}{1} + \frac{a}{b} = \frac{a}{b} = \frac{0}{1}$, so $\frac{0}{1}$ is an identity under $\mathcal{A}$. And, $\frac{a}{b} + \frac{-a}{b} = 0 = \frac{-a}{b} + \frac{a}{b}$, so $\frac{-a}{b}$ is an inverse of $\frac{a}{b}$. Thus $\mathcal{A}$ is a group under addition.
+\item[(f)]
+$\mathcal{A}$ is not a group under addition. Consider $a = \frac{1}{3}$ and $b = \frac{1}{2}$. Then
+$$a + b = \frac{1}{3} + \frac{1}{2} = \frac{5}{6} \not \in \mathcal{A}$$
+Thus, addition is not a binary operation over $\mathcal{A}$.
+\end{itemize}
+\item[(7)]
+Consider $x, y, z \in G$. Note that $x + y = [x + y] + r$, where $0 \leq r < 1$. Then $x * y = x + y - [x + y] = r$. Since $r \in G$, then $*$ is well defined on $G$. To show that $*$ is associative, we must first note that if $n$ is an integer, then $[x + n] = [x] + n$. Then,
+$$(x * y) * z = (x + y - [x + y]) + z - [(x + y - [x + y]) + z]$$
+$$= x + y + z - [x + y] - [x + y + z] + [x + y]$$
+$$= x + y + z - [x + y + z]$$
+$$= x + y + z - [y + z] + [y + z] - [x + y + z]$$
+$$= x + (y + z - [y + z]) + [x + (y + z - [y + z])] = x * (y * z)$$
+So, $*$ is associative over $G$. Since for any $x \in G$, $x * 0 = x + 0 - [x + 0] = x - [x] = x = 0 + x - [0 + x] = 0 * x$, then $0$ is an identity of $G$. And, for any $x \in G$, let $y = 1 - x$. Then $x * y = x + y - [x + y] = 1 - [1] = 0 = y + x - [y + x] = y * x$, so $y$ is an inverse of $x$. Therefore, $G$ is a group under $*$. To show that $G$ is abelian, we must show that $*$ is commutative. For any $x, y \in G$,
+$$x * y = x + y - [x + y] = y + x - [y + x] = y * x$$
+Therefore, $G$ is abelian.
+\item[(8)]
+\begin{itemize}
+\item[(a)] Consider $z_1, z_2, z_3 \in G$. So for $n_1, n_2 \in \mathbb{Z}^+$, $z_1^{n_1} = 1$ and $z_2^{n_2} = 1$. So
+$$(z_1z_2)^{n_1n_2} = z_1^{n_1n_2}z_2^{n_1n_2} = (z_1^{n_1})^{n_2}(z_2^{n_2})^{n_1} = 1^{n_2}1^{n_1} = 1$$
+Therefore, multiplication is well defined over $G$.
+$$(z_1z_2)z_3 = z_1z_2z_3 = z_1(z_2z_3)$$
+Therefore, multiplication is associative (as a consequence of associativity of multiplying complex numbers). Since $1 \in G$, and for all $z_1$ $1z_1 = z_1 = z_11$, then 1 is an identity of $G$. Let $a = z^{n - 1}$, where $n$ is a positive integer such that $z^n = 1$. Note that
+$$a^n = (z^{n-1})^n = z^{n(n - 1)} = (z^n)^{n - 1} = 1$$
+Therefore, $a \in G$. Then
+$$az = z^{n-1}z = z^n = 1 = zz^{n-1} = za$$
+So, each $z \in G$ has an inverse in $G$. Therefore $G$ is a group under multiplication.
+\item[(b)] Consider $1 \in G$. But $z = 1 + 1 = 2 \not \in G$, since $z^n$ monotonically increases as $n$ increases if $|z| > 1$. So, there is no positive. integer solution to $2^n = 1$. Therefore, addition is not well defined over $G$, and $G$ is not a group under addition.
+\end{itemize}
+\item[(9)]
+\begin{itemize}
+\item[(a)]
+Let $x = x_1 + x_2\sqrt{2}, y = y_1 + y_2\sqrt{2}, z = z_1 + z_2\sqrt{2} \in G$
+$$x + y = x_1 + x_2\sqrt{2} + y_1 + y_2\sqrt{2} = x_1 + y_1 + (x_2 + y_2)\sqrt{2}$$
+So addition is well defined over $G$. Furthermore,
+$$(x + y) + z = x_1 + y_1 + (x_2 + y_2)\sqrt{2} + z_1 + z_2\sqrt{2}$$
+$$ = x_1 + x_2\sqrt{2} + y_1 + z_1 + (y_2 + z_2)\sqrt{2} = x + (y + z)$$
+So addition is associative over $G$. $x + 0 = x_1 + x_2\sqrt{2} + 0 + 0\sqrt{2} = x = 0 + x$. so $0$ is an identity on $G$. Let $x^{-1} = -x_1 - x_2\sqrt{2}$ for all $x \in G$. Then $x + x^{-1} = x_1 - x_1 + x_2\sqrt{2} - x_2\sqrt{2} = 0 = x^{-1} + x$, so each $x$ has an inverse $x^{-1} = -x$. Therefore, $G$ is a group under addition.
+\item[(b)]
+(Note: throughout this proof, notation is abused; where $G$ is used, we mean $G - \left\lbrace 0 \right\rbrace$). Let $x = x_1 + x_2\sqrt{2}, y = y_1 + y_2\sqrt{2}, z = z_1 + z_2\sqrt{2} \in G$
+$$xy = (x_1 + x_2\sqrt{2})(y_1 + y_2\sqrt{2}) = x_1y_1 + 2x_2y_2 + (x_1y_2 + x_2y_1)\sqrt{2}$$
+Since $x_1y_1 + 2x_2y_2, x_1y_2 + x_2y_1 \in \mathbb{Q}$, multiplication is well defined over $G$. Furthermore,
+$$(xy)z = (x_1y_1 + 2x_2y_2 + (x_1y_2 + x_2y_1)\sqrt{2})(z_1 + z_2\sqrt{2})$$
+$$= x_1y_1z_1 + x_1y_1z_2\sqrt{2} + 2x_2y_2z_1 + 2x_2y_2z_2\sqrt{2}$$
+$$+ x_1y_2z_1\sqrt{2} + x_2y_1z_1\sqrt{2} + 2x_1y_2z_2 + 2x_2y_1z_2$$
+$$= (x_1 + x_2\sqrt{2})(y_1z_1 + 2y_2z_2 + (y_1z_2 + y_2z_1)\sqrt{2})$$
+$$= x(yz)$$
+So multiplication is well defined over $G$. $x1 = (x_1 + x_2\sqrt{2})(1 + 0\sqrt{2}) = x = 1x$, so 1 is an identity on $G$. Let 
+$$x^{-1} = \frac{x_1}{x_1^2 - 2x_2^2} - \frac{x_2\sqrt{2}}{x_1^2 - 2x_2^2}$$
+Clearly, $x^{-1} \in G$. Then
+$$xx^{-1} = (x_1 + x_2\sqrt{2})\left(\frac{x_1}{x_1^2 - 2x_2^2} - \frac{x_2\sqrt{2}}{x_1^2 - 2x_2^2} \right)$$
+$$= \frac{x_1^2}{x_1^2 - 2x_2^2} + \frac{x_1x_2\sqrt{2}}{x_1^2 - 2x_2^2} - \frac{x_1x_2\sqrt{2}}{x_1^2 - 2x_2^2} - \frac{2x_2^2}{x_1^2 - 2x_2^2} = 1 = x^{-1}x$$
+Therefore, for all $x \in G$, $x$ has a multiplicative inverse $x^{-1} \in G$. So $G$ is a group under multiplication. 
+\end{itemize}
+\item[(10)]
+Suppose we have a finite group $G = \left\lbrace g_1, g_2, ..., g_n\right\rbrace$ of size $n$ that has an associated group table $T$ of size $n \times n$, where an entry $t_{ij}$ if $T$ is $g_ig_j$. Recall that a $n \times n$ matrix $M$ with entries written as $m_{ij}$ is symmetric if and only if for every $i,j \in \left\lbrace 1, 2, ..., n \right\rbrace$, $m_{ij} = m_{ji}$. \\
+If $G$ is abelian, then for every $i, j \in \left\lbrace 1, 2, ..., n \right\rbrace, g_ig_j = g_jg_i$, and therefore $T$ is symmetric. \\
+If $T$ is symmetric, then for every $i, j \in \left\lbrace 1, 2, ..., n \right\rbrace, t_{ij} = t_{ji} \rightarrow g_ig_j = g_jg_i$, so $G$ is therefore abelian.
+\end{itemize}
+
+\end{document}
