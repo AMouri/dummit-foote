@@ -271,6 +271,97 @@ Note that $a$ and $b$ commute throughout this proof.
 \item[(25)]
 Suppose $x^2 = 1$ for all $x \in G$. Then $x = x^{-1}$ So for $a, b \in G$, we have
 $$ab = (ab)^{-1} = b^{-1}a^{-1} = ba$$
+\item[(26)]
+From the problem statement, we know that * is well defined on $H$. Let $a, b, c \in H$. Since $H \subseteq G$, then $a, b, c \in G$. Therefore, $(a * b) * c = a * (b * c)$. From the problem statement, we also know that for each $a \in H$, $a^{-1} \in H$. So $aa^{-1} = e \in H$ is the identity of $H$. Thus $H$ is a group under *.
+\item[(27)]
+Let $\mathcal{A} = \left\lbrace x^n | n \in \mathbb{Z}\right\rbrace$ for $x \in G$. Note for each $a \in \mathcal{A}$, that $a \in G$ since * is well defined over $G$. Consider $a_1, a_2, a_3 \in \mathcal{A}$, where for $i = 1, 2, 3$, $a_i = x^{n_i}$ for $n_i \in \mathbb{Z}$. Since $n_1 + n_2 \in \mathbb{Z}$, then
+$$a_1 * a_2 = x^{n_1}x^{n_2} = x^{n_1 + n_2} \in \mathcal{A}$$
+So * is well defined over $\mathcal{A}$. Furthermore,
+$$(a_1 * a_2) * a_3 = (x^{n_1}x^{n_2})x^{n_3} = x^{n_1 + n_2}x^{n_3} = x^{n_1 + n_2 + n_3}$$ 
+$$= x^{n_1}(x^{n_2 + n_3}) = x^{n_1}(x^{n_2}x^{n_3}) = a_1 * (a_2 * a_3)$$
+Thus, * is an associative operator. Since 1 is the identity in $G$, and $1 = x^0 \in \mathcal{A}$, then $\mathcal{A}$ has the identity 1. Let $a_1^{-1} = x^{-n_1} \in \mathcal{A}$. Then
+$$a_1a_1^{-1} = x^{n_1}x^{-n_1} = x^{n_1 - n_1} = x^0 = 1 = a_1^{-1}a_1$$
+Thus, $a_1^{-1}$ is the inverse of $a_1$, so every $a \in \mathcal{A}$ has an inverse. Therefore $\mathcal{A}$ is a subgroup of $G$.
+\item[(28)]
+\begin{itemize}
+\item[(a)]
+$$(a_1, b_1)[(a_2, b_2)(a_3, b_3)] = (a_1, b_1)(a_2 * a_3, b_2 \diamond b_3)$$
+$$= (a_1 * (a_2 * a_3), b_1 \diamond (b_2 \diamond b_3)) = ((a_1 * a_2) * a_3, (b_1 \diamond b_2) \diamond b_3)$$
+$$= (a_1 * a_2, b_1 \diamond b_2)(a_3, b_3) = [(a_1, b_1)(a_2, b_2)](a_3, b_3)$$
+\item[(b)] Let $a \in A$, $b \in B$. Then
+$$(1, 1)(a, b) = (1 * a, 1 \diamond b) = (a, b) = (a, b)(1, 1)$$
+\item[(c)]
+$$(a, b)(a^{-1}, b^{-1}) = (a * a^{-1}, b \diamond b^{-1}) = (1, 1) = (a^{-1}, b^{-1})(a, b)$$
 \end{itemize}
-
+\item[(29)]
+Suppose $A \times B$ is abelian. Then for $(a_1, b_1), (a_2, b_2) \in A \times B$,
+$$(a_1 * a_2, b_1 \diamond b_2) = (a_1, b_1)(a_2, b_2) =  (a_2, b_2)(a_1, b_1) = (a_2 * a_1, b_2 \diamond b_1)$$
+So, $a_1 * a_2 = a_2 * a_1$ and $b_1 \diamond b_2 = b_2 \diamond b_1$, so $A$ and $B$ are abelian. \\
+Suppose $A$ and $B$ are abelian. Then for $a_1, a_2 \in A$ and $b_1, b_2 \in B$, then
+$$(a_1, b_1)(a_2, b_2) = (a_1 * a_2, b_1 \diamond b_2) = (a_2 * a_1, b_2 \diamond b_1) =  (a_2, b_2)(a_1, b_1)$$
+Therefore, $A \times B$ is abelian.
+\item[(30)]
+$$(a, 1)(1, b) = (a * 1, 1 \diamond b) = (1 * a, b \diamond 1) = (1, b)(a, 1)$$
+Let $n$ be the order of $(a, b)$. Then for some $i, j \in \mathbb{Z}^+$
+$$(a, b)^n = (a^n, b^n) = (a^{i|a|}, b^{j|b|}) = (1, 1)$$
+So,
+$$n = i|a| = j|b|$$
+$|a| | n$ and $|b| | n$, so $n$ is a multiple of $|a|$ and $|b|$. Furthermore, suppose there exists some positive integer $m$ such that
+$$(a, b)^m = (1, 1)$$
+and also, that $|a| | m$, $|b| | m$, but $n \not | m$. That is, $l$ is not the least common multiple. But then $m < n$, so $n$ cannot be the order of $(a, b)$. So by contradiction, $l$ must be the least common multiple.
+\item[(31)]
+Let $G$ be a group of even order. Define $t(G)$ to be
+$$t(G) = \left\lbrace g \in G | g \neq g^{-1} \right\rbrace$$
+Let
+$$A = \left\lbrace \left\lbrace a, a^{-1} \right\rbrace | a \in t(G) \right\rbrace$$
+Since $\bigcup_{\alpha \in A}\alpha = t(G)$, and for $\alpha, \beta \in A$, $\alpha \cap \beta = \emptyset$, then $A$ is a partition of $t(G)$. Then
+$$|t(G)| = \sum_{\alpha \in A}|\alpha| = 2|A|$$
+For every $a \in G - t(G)$, $a = a^{-1}$. If $a \neq 1$, then $a^2 = aa^{-1} = 1$. So $a$ has order 2. Note that the identity 1 is always an element of $G - t(G)$, so $G - t(G)$ is always nonempty. If $|G - t(G)| = 1$, then $|G| = |t(G)| + |G - t(G)| = 2|A| + 1$. But this is a contradiction, since $|G|$ is even. Therefore $|G - t(G)| > 1$, so there must exist some element of order $2$ in $G$.
+\item[(32)]
+Suppose $x \in G$ has order $n$, and that for sake of contradiction that $1, x, x^2, ..., x^{n-1}$ are not all distinct. Then for some $i,j \in \mathbb{Z}^+$ where $i < j < n$, that
+$$x^j = x^i \rightarrow x^{j - i} = 1$$
+But $1 \leq j - i < n$, contradicting that $x$ has order $n$. Thus $1, x, x^2, ..., x^{n-1}$ must all be distinct. It then follows that since there are at least $|x|$ distinct elements of $G$ that $|x| \leq |G|$.
+\item[(33)]
+\begin{itemize}
+\item[(a)]
+Proving the contrapositive: suppose that
+$$x^i = x^{-i}$$
+For $1 \leq i \leq n - 1$. Then
+$$x^n = 1 \rightarrow x^nx^{-i} = x^{-i} \rightarrow x^nx^{-i} = x^i \rightarrow x^n = x^{2i}$$
+Ie. $n$ is even. 
+\item[(b)]
+Suppose $n = 2k$ and $x^i = x^{-i}$. Then
+$$x^i = x^{-i} \rightarrow x^{2i} = 1 \rightarrow x^{2i} = x^{2k} \rightarrow i = k$$
+Suppose $i = k$. Then
+$$x^{2k} = 1\rightarrow x^{2i} = 1 \rightarrow x^i = x^{-i}$$
+\end{itemize}
+\item[(34)]
+Suppose $x$ has infinite order and suppose for sake of contradiction that $x^n, n \in \mathbb{Z}$ are not all distinct. Then for some $i, j \in \mathbb{Z}$ where $j > i$, 
+$$x^j = x^i \rightarrow x^{j - i} = 1$$
+But this implies $x$ has finite order at most $j - i$. Thus by contradiction, all $x^n$ must be disinct.
+\item[(35)]
+Consider $x^a$ an integral power of $x$. By the Division Algorithm, for $q, r \in \mathbb{Z}$, $0 \leq r < n$,
+$$a = qn + r$$
+Then
+$$x^a = x^{qn + r} = x^{qn}x^r = (x^n)^qx^r = x^r$$
+Note that $x^r \in \left\lbrace 1, x, x^2, ..., x^{n - 1} \right\rbrace = \mathcal{A}$, so therefore $x^a \in \mathcal{A}$.
+\item[(36)]
+Consider the expression $ab$. If $ab = b$, then $a = 1$, so then $ab \neq b$. Similarly, $ab \neq a$. Suppose $ab = 1$. Since $b \neq a$, then $a^2 \neq ab = 1$. Since the order of $a$ is at most 3, then $a^3 = 1$, and $a^3b = b \rightarrow a^2 = b$. Similarly, $b^2 = a$. Consider $ac$. If $ac = 1$, then by similar reasoning $a^2 = c$ and $c^2 = a$. But then $b = c$, a contradiction. Furthermore, using similar reasoning as above $ac \neq a$ and $ac \neq c$. So therefore $ac = b$. But then $a^3c = a^2b \rightarrow c = a$, a contradiction. So therefore the initial assumption of $ab = 1$ is wrong. Therefore $ab = c$. Similarly, $ba = c$, $ac = ca = b$, and $bc = cb = a$. Then $a^2b = ac = b \rightarrow a^2 = 1$. Similarly, $b^2 = 1$ and $c^2 = 1$. The final group table is then \\
+\begin{center}
+\begin{tabular}{| c || c | c | c | c |}
+\hline
+* & 1 & $a$ & $b$ & $c$ \\
+\hline
+\hline
+1 & 1 & $a$ & $b$ & $c$ \\
+\hline
+$a$ & $a$ & 1 & $c$ & $b$ \\
+\hline
+$b$ & $b$ & $c$ & 1 & $a$ \\
+\hline
+$c$ & $c$ & $b$ & $a$ & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\end{itemize}
 \end{document}
