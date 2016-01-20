@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\begin{document}
+\title{Preliminaries - The Integers Modulo n}
+\author{Alec Mouri}
+
+\maketitle
+\section*{Exercises}
+\begin{itemize}
+\item[(1)]
+$$\overline{0} = ..., -36, -18, 0, 18, 36, ... = \left\lbrace 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{1} = ..., -35, -17, 1, 19, 37, ... = \left\lbrace 1 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{2} = ..., -34, -16, 2, 20, 38, ... = \left\lbrace 2 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{3} = ..., -33, -15, 3, 21, 39, ... = \left\lbrace 3 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{4} = ..., -32, -14, 4, 22, 40, ... = \left\lbrace 4 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{5} = ..., -31, -13, 5, 23, 41, ... = \left\lbrace 5 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{6} = ..., -30, -12, 6, 24, 42, ... = \left\lbrace 6 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{7} = ..., -29, -11, 7, 25, 43, ... = \left\lbrace 7 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{8} = ..., -28, -10, 8, 26, 44, ... = \left\lbrace 8 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{9} = ..., -27, -9, 9, 27, 45, ... = \left\lbrace 9 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{10} = ..., -26, -8, 10, 28, 46, ... = \left\lbrace 10 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{11} = ..., -25, -7, 11, 29, 47, ... = \left\lbrace 11 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{12} = ..., -24, -6, 12, 30, 48, ... = \left\lbrace 12 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{13} = ..., -23, -5, 13, 31, 49, ... = \left\lbrace 13 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{14} = ..., -22, -4, 14, 32, 50, ... = \left\lbrace 14 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{15} = ..., -21, -3, 15, 33, 51, ... = \left\lbrace 15 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{16} = ..., -20, -2, 16, 34, 52, ... = \left\lbrace 16 + 18k, k \in \mathbb{Z}\right\rbrace$$
+$$\overline{17} = ..., -19, -1, 17, 35, 53, ... = \left\lbrace 17 + 18k, k \in \mathbb{Z}\right\rbrace$$
+\item[(2)] For any $a \in \mathbb{Z}$, then by the division algorithm:
+$$a = bn + r$$
+for $b, r \in \mathbb{Z}$, $0 \leq r < n$. Then,
+$$\overline{a} = \overline{bn + r} = \overline{bn} + \overline{r} = \overline{r}$$
+Suppose for $0 \leq r_1, r_2 < n$, $r_1 \neq r_2$, and $\overline{r_1} = \overline{r_2}$. Then for some $k \in \mathbb{Z}$, $r_1 = r_2 + nk$. But by the division algorithm, we also have $r_1 = (0)n + r_1$. Therefore, $k = 0$, and $r_1 = r_2$. Therefore, if $r_1 \neq r_2$, then $\overline{r_1} \neq \overline{r_2}$. Therefore, there are $n$ equivalence classes - namely, $\overline{0}, \overline{1}, ..., \overline{n-1}$.
+\item[(3)]
+First, let us show the following fact: for any $n > 0$, then 
+$$10^n \equiv 1 \mod 9$$
+If $n = 1$, then trivially $10 \equiv 1 \mod 9$. Suppose for all $k < n$, then
+$$10^k \equiv 1 \mod 9$$
+So therefore
+$$10^n \equiv 10^{n-1}10 \equiv 10 \equiv 1 \mod 9$$
+So, if $a = a_n10^n + a_{n-1}10^{n-1} + ... + a_110 + a_0$, then 
+$$a \equiv a_n + a_{n - 1} + ... + a_1 + a_0 \mod 9$$
+\item[(4)]
+$$37 \equiv 8 \mod 29$$
+$$37^2 \equiv 8^2 \equiv 6 \mod 29$$
+$$37^4 \equiv 6^2 \equiv 7 \mod 29$$
+$$37^8 \equiv 7^2 \equiv 20 \mod 29$$
+$$37^{10} \equiv 37^837^2 \equiv 120 \equiv 4 \mod 29$$
+$$37^{20} \equiv 4^2 \equiv 16 \mod 29$$
+$$37^{40} \equiv 16^2 \equiv 256 \equiv 24$$
+$$37^{50} \equiv 37^{40}37^{10} \equiv (24)(4) \equiv 9 \mod 29$$
+$$37^{100} \equiv 9^2 \equiv 81 \equiv 23 \mod 29$$
+\item[(5)]
+$$9 \equiv 9 \mod 100$$
+$$9^2 \equiv 81 \mod 100$$
+$$9^4 \equiv 81^2 \equiv 6561 \equiv 61 \mod 100$$
+$$9^8 \equiv 61^2 \equiv 3721 \equiv 21 \mod 100$$
+$$9^{16} \equiv 21^2 \equiv 441 \equiv 41 \mod 100$$
+$$9^{32} \equiv 41^2 \equiv 1681 \equiv 81 \mod 100$$
+$$9^{64} \equiv 81^2 \equiv 61 \mod 100$$
+$$9^{100} \equiv 9^{64}9^{32}9^4 \equiv 61^281 \equiv (21)(81) \equiv 1701 \equiv 1 \mod 100$$
+$$9^{1500} \equiv (9^{100})^{15} \equiv 1 \mod 100$$
+\item[(6)]
+We will consider each equivalence class one at a time using the least residue of each class: \\
+$\overline{0}$: $0^2 \equiv 0 \mod 4$ \\
+$\overline{1}$: $1^2 \equiv 1 \mod 4$ \\
+$\overline{2}$: $2^2 \equiv 0 \mod 4$ \\
+$\overline{3}$: $3^2 \equiv 1 \mod 4$ \\
+Since squaring each least residue results in either $\overline{0}$ or $\overline{1}$, then squaring any element of $\mathbb{Z}/4\mathbb{Z}$ gives $\overline{0}$ or $\overline{1}$.
+\item[(7)]
+From exercise 6, we know that for any $a \in \mathbb{Z}$, then either
+$$a^2 \equiv 0 \mod 4, \text{ or}$$
+$$a^2 \equiv 1 \mod 4$$
+Let $a, b \in \mathbb{Z}$. We then have three cases:
+$$a^2 \equiv b^2 \equiv 0 \mod 4 \rightarrow a^2 + b^2 \equiv 0 \mod 4$$
+$$a^2 \equiv b^2 \equiv 1 \mod 4 \rightarrow a^2 + b^2 \equiv 2 \mod 4$$
+$$a^2 \not \equiv b^2 \mod 4 \rightarrow a^2 + b^2 \equiv 1 \mod 4$$
+Therefore, $a^2 + b^2$ cannot leave a remainder of 3 when divided by 4.
+\item[(8)]
+Let $a, b, c$ belong to the equivalence classes $\overline{a}, \overline{b}, \overline{c}$ respectively. Recall from Exercise 6 that $\overline{c}^2$ is equivalent to either 0 or 1 modulo 4. Also, recall from Exercise 7 that $\overline{a}^2 + \overline{b}^2$ cannot be equivalent to 3 modulo 4. Therefore, $\overline{c}^2$ must be equivalent to 0 modulo 4. Furthermore, from the above solution to Exercise 7, we find that
+$$\overline{a}^2 \equiv \overline{b}^2 \equiv 0 \mod 4$$
+So, 4 must divide each of $a^2, b^2, c^2$. We can then divide the equation $a^2 + b^2 = 3c^2$ by 4 an infinite number of times. But this implies that $a^2 + b^2 = 3c^2 = 0$. But none of $a, b, c$ can equal 0. Therefore, $a^2 + b^2 = 3c^2$ has no solution for nonzero $a, b, c$.
+\item[(9)] We shall consider the equivalence classes $\overline{1}, \overline{3}, \overline{5}, \overline{7}$, since all odd numbers modulo 8 belong to those equivalence classes. To see this, note that $1, 3, 5, 7$ are the only odd numbers in $\mathbb{Z}/8\mathbb{Z}$ that are $< 8$. Suppose $a \in \mathbb{Z}$ is odd. Then for an equivalence class $\overline{m} = \left\lbrace 8k + m | k \in \mathbb{Z}\right\rbrace$, $a \in \overline{m}$ if $a = 8k + m$ for some $k \in \mathbb{Z}$. Since $a$ is odd, then $a = 2j + 1$ for some $j \in \mathbb{Z}$. Then $2j + 1 = 8k + m \rightarrow 2j = 8k + (m - 1)$. Therefore, $m - 1$ must divide $2$, implying that $m$ is odd. In particular, $m$ can be either one of $1, 3, 5, 7$, which are precisely the least residues of  $\overline{1}, \overline{3}, \overline{5}, \overline{7}$ respectively. So, let us compute the square of these equivalence classes:
+$$1^2 \equiv 1 \mod 8$$
+$$3^2 \equiv 9 \equiv 1 \mod 8$$
+$$5^2 \equiv 25 \equiv 1 \mod 8$$
+$$7^2 \equiv 49 \equiv 1 \mod 8$$
+Therefore, squaring any odd number must leave a remainder of 1 when divided by 8.
+\item[(10)] From Proposition 4, the elements of $(\mathbb{Z}/n\mathbb{Z})^\times$ are those whose least residue's gcd with $n$ is 1. That is, for each element of $(\mathbb{Z}/n\mathbb{Z})^\times$, its least residue is relatively prime to $n$. But $\varphi(n)$ is precisely the number of positive integers $\leq n$ that are relatively prime to $n$. Therefore, there are $\varphi(n)$ such elements of $(\mathbb{Z}/n\mathbb{Z})^\times$.
+\item[(11)] If $\overline{a}, \overline{b} \in (\mathbb{Z}/n\mathbb{Z})^\times$, then there exists $\overline{c}, \overline{d} \in (\mathbb{Z}/n\mathbb{Z})^\times$ such that $\overline{a}\overline{c} = \overline{b}\overline{d} = \overline{1}$. Therefore, $\overline{a}\overline{b}\overline{c}\overline{d} = \overline{1}$. Therefore, $\overline{a}\overline{b}$ and $\overline{c}\overline{d}$ are members of $(\mathbb{Z}/n\mathbb{Z})^\times$.
+\item[(12)] Suppose $a, n$ are not relatively prime. Then for some positive integer $k > 1$, then $a = ik$ and $n = jk$, where $i, j$ are positive integers such that $i < a$ and $j < n$. Then $aj = ijk = in$, and therefore
+$$aj \equiv 0 \mod n$$
+Suppose for sake of contradiction that there exists an integer $c$ such that 
+$$ac \equiv 1 \mod n$$
+Then 
+$$ajc \equiv j \mod n$$
+But from above, we have that 
+$$ajc \equiv 0 \mod n$$
+Since $j \not \in \overline{0}$, we have a contradiction, and it cannot be the case that there exists $c$ such that
+$$ac \equiv 1 \mod n$$
+\item[(13)] Suppose $a$ and $n$ are relatively prime. Then $(a, n) = 1$. Furthermore, there exist $x, y \in \mathbb{Z}$ such that
+$$ax + ny = 1$$
+Therefore,
+$$ax + ny \equiv ax \equiv 1 \mod n$$
+\item[(14)] For brevity, let $\mathcal{A}$ be the set of relatively prime elements of $\mathbb{Z}/n\mathbb{Z}$. Suppose $a, n \in \mathbb{Z}$ with $n > 1$ and $1 \leq a < n$. By the contrapositive of Exercise 12, if there exists some $c \in \mathbb{Z}$ such that $ac \equiv 1 \mod n$, then $a$ and $c$ are relatively prime. That is, $\mathcal{A}$ is a subset of $(\mathbb{Z}/n\mathbb{Z})^\times$. By Exercise 13 directly, we see that $(\mathbb{Z}/n\mathbb{Z})^\times$ is a subset of $\mathcal{A}$. Therefore, $\mathcal{A}$ is precisely the same set as $(\mathbb{Z}/n\mathbb{Z})^\times$, proving Proposition 4.
+\item[(15)]
+\begin{itemize}
+\item[(a)]
+$$20 = (1)13 + 7$$
+$$13 = (1)7 + 6$$
+$$7 = (1)6 + 1$$
+$$(20, 13) = 1$$
+$$1 = 7 - 6$$
+$$1 = 7 - (13 - 7) = 2(7) - 13$$
+$$1 = 2(20 - 13) - 13 = 2(20) - 3(13)$$
+$$\overline{a} \equiv -3 \equiv 17 \mod 20$$
+\item[(b)]
+$$89 = (1)69 + 20$$
+$$69 = (3)20 + 9$$
+$$20 = (2)9 + 2$$
+$$9 = (4)2 + 1$$
+$$(89, 69) = 1$$
+$$1 = 9 - (4)2$$
+$$1 = 9 - (4)(20 - (2)9) = (9)9 - (4)20$$
+$$1 = (9)(69 - (3)20) - (4)20 = (9)69 - (31)20$$
+$$1 = (9)69 - (31)(89 - 69) = (40)69 - (31)89$$
+$$\overline{a} \equiv 40 \mod 89$$
+\item[(c)]
+$$3797 = (2)1891 + 15$$
+$$1891 = (126)15 + 1$$
+$$(3797, 1891) = 1$$
+$$1 = 1891 - (126)15$$
+$$1 = 1891 - (126)(3797 - (2)1891) = (253)1891 - (126)3797$$
+$$\overline{a} \equiv 253 \mod 3797$$
+\item[(d)]
+$$77695236973 = (12)6003722857 + 5650562689$$
+$$6003722857 = (1)5650562689 + 353160168$$
+$$5650562689 = (16)353160168 + 1$$
+$$(77695236973, 6003722857) = 1$$
+$$1 = 5650562689 - (16)353160168$$
+$$1 = 5650562689 - (16)(6003722857 - 5650562689)$$
+$$1 = (17)5650562689 - (16)6003722857$$
+$$1 = (17)(77695236973 - (12)6003722857) - (16)6003722857$$
+$$1 = (17)77695236973 - (220)6003722857$$
+$$\overline{a} \equiv -220 \equiv 77695236753 \mod 77695236973$$
+\item[(16)] See 16.py
+\end{itemize}
+\end{itemize}
+
+\end{document}
