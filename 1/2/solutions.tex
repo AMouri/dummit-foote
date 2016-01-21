@@ -28,6 +28,47 @@ $$r^0s = s = sr^{-0}$$
 Suppose for $0 \leq k < i$ that
 $$r^ks = sr^{-k}$$
 Then 
-$$r^is = rr^{i - 1}s = r(r^{i - 1}s) = r(sr^{-(i - 1)}) = (sr^{-(i - 1)})r^{-1} = sr^{-i}$$
+$$r^is = rr^{i - 1}s = r(r^{i - 1}s) = r(sr^{-(i - 1)})$$
+$$= (rs)r^{-(i - 1)} = (sr)r^{-(i - 1)} = sr^{-i}$$
+\end{itemize}
+\section*{Exercises}
+\begin{itemize}
+\item[(1)]
+\begin{itemize}
+\item[(a)]
+$$1^1 = 1 \rightarrow |1| = 1$$
+$$(r)^3 = 1 \rightarrow |r| = 3$$
+$$(r^2)^3 = 1 \rightarrow |r^2| = 3$$
+$$s^2 = 1 \rightarrow |s| = 2$$
+$$(sr)^2 = srr^{-1}s = s^2 = 1 \rightarrow |sr| = 2$$
+$$(sr^2)^2 = sr^2r^{-2}s = s^2 = 1 \rightarrow |sr^2| = 2$$
+\item[(b)]
+$$1^1 = 1 \rightarrow |1| = 1$$
+$$(r)^4 = 1 \rightarrow |r| = 4$$
+$$(r^2)^2 = 1 \rightarrow |r^2| = 2$$
+$$(r^3)^4 = 1 \rightarrow |r^3| = 4$$
+$$s^2 = 1 \rightarrow |s| = 2$$
+$$(sr)^2 = srr^{-1}s = s^2 = 1 \rightarrow |sr| = 2$$
+$$(sr^2)^2 = sr^2r^{-2}s = s^2 = 1 \rightarrow |sr^2| = 2$$
+$$(sr^3)^2 = sr^3r^{-3}s = s^2 = 1 \rightarrow |sr^3| = 2$$
+\item[(c)]
+$$1^1 = 1 \rightarrow |1| = 1$$
+$$(r)^5 = 1 \rightarrow |r| = 5$$
+$$(r^2)^5 = 1 \rightarrow |r^2| = 5$$
+$$(r^3)^5 = 1 \rightarrow |r^3| = 5$$
+$$(r^4)^5 = 1 \rightarrow |r^4| = 5$$
+$$s^2 = 1 \rightarrow |s| = 2$$
+$$(sr)^2 = srr^{-1}s = s^2 = 1 \rightarrow |sr| = 2$$
+$$(sr^2)^2 = sr^2r^{-2}s = s^2 = 1 \rightarrow |sr^2| = 2$$
+$$(sr^3)^2 = sr^3r^{-3}s = s^2 = 1 \rightarrow |sr^3| = 2$$
+$$(sr^4)^2 = sr^4r^{-4}s = s^2 = 1 \rightarrow |sr^4| = 2$$
+\end{itemize}
+\item[(2)]
+Let $x \in D_{2n}$. Then $x = s^ir^j$ for $i = 0, 1$ and $0 \leq j < n$. $x$ must not be a power of $r$. If $i = 0$, then $x$ is a power, so therefore $i = 1$, and $x = sr^j$. Therefore
+$$rx = rsr^j = (rs)r^j = (sr^{-1})r^j = sr^{j - 1} = sr^jr^{-1} = xr^{-1}$$
+\item[(3)]
+Let $x \in D_{2n}$ such that $x$ is not a power of $r$. Then $x = sr^j$ for $0 \leq j < n$. Clearly, $x \neq 1$. And,
+$$x^2 = (sr^j)^2 = sr^jsr^j = s(sr^{-j})r^j = s^2 = 1$$
+Thus, $|x| = 2$. Note that $s \in <s, sr>$. Since $r = ssr$, then $r \in <s, sr>$. Therefore $D_{sn} = <s, sr>$.
 \end{itemize}
 \end{document}
