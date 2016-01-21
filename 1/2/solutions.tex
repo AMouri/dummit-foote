@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\begin{document}
+\title{Introduction to Groups - Dihedral Groups}
+\author{Alec Mouri}
+
+\maketitle
+\section*{D2n Calculations}
+For these calculations, we shall re-index each vertex so that the vertices are ordered from 0 to $n - 1$, as opposed to ordering them from 1 to $n$.
+\begin{itemize}
+\item[(1)] 
+If $r$ is a clockwise rotation about the origin through $\frac{2\pi}{n}$, then the vertex $i$ is sent to vertex $i + 1$ modulo $n$. Furthermore, $r^k$ is the clockwise rotation about the origin through $\frac{2\pi k}{n}$, and so the vertex $i$ is sent to the vertex $i + k$ modulo $n$. Clearly then, $1, r, r^2, ..., r^{n - 1}$ are unique. And $r^n$ is the clockwise rotation through $2\pi$, so the vertex $i$ is sent to the vertex $i + n \equiv i \mod n$. Therefore, $r^n = 1 \rightarrow |r| = n$.
+\item[(2)]
+If $s$ is a reflection about a line of symmetry, then any vertex $i$ is sent to some vertex $j$, and $j$ is sent to $i$. Therefore, $s^2$ sends vertex $i$ to itself. Since $s$ sends vertex 1 to vertex $n - 1$, then $|s| = 2$.
+\item[(3)]
+The reflection $s$ sends vertex 0 to itself, and vertex 1 to vertex $n - 1$. For $k \in \mathbb{Z}^+$, $r^k$ sends vertex 0 to vertex $k \mod n$. If $k \not \equiv 0 \mod n$, then vertex 0 is not sent to itself, so then $r^k \neq s$. If $k \equiv 0 \mod n$, then vertex 0 is sent to itself. But vertex 1 is sent to itself, not to $n - 1$. Therefore, $s \neq r^k$ for any $k$.
+\item[(4)]
+Suppose $sr^i = sr^j$. Then
+$$s^2r^i = s^2r^j \rightarrow r^i = r^j$$
+But by (1), $r^i \neq r^j$. Therefore $sr^i \neq
+sr^j$. It then follows from (1), (2), and (3) that
+$$D_{2n} = \left\lbrace 1, r, r^2, ..., r^{n - 1}, s, sr, s^2, ..., sr^{n - 1}\right\rbrace$$
+\item[(5)]
+For this problem, we shall 0 index the vertices. If $s$ is a reflection about the line of symmetry passing through vertex 0, then vertex $i$ is sent to vertex $n - i \mod n$. So for vertex $i$, the permutation $rs$ first sends $i$ to $n - i$, then sends vertex $n - i$ to vertex $n - i + 1$. The permutation $sr^{-1}$ first sends $i$ to $i - 1$, then sends vertex $i - 1$ to vertex $n - (i - 1) = n - i + 1$. So therefore $rs = sr^{-1}$.
+\item[(6)]
+If $i = 0$, then
+$$r^0s = s = sr^{-0}$$
+Suppose for $0 \leq k < i$ that
+$$r^ks = sr^{-k}$$
+Then 
+$$r^is = rr^{i - 1}s = r(r^{i - 1}s) = r(sr^{-(i - 1)}) = (sr^{-(i - 1)})r^{-1} = sr^{-i}$$
+\end{itemize}
+\end{document}
