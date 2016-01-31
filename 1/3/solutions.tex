@@ -1,0 +1,320 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\begin{document}
+\title{Introduction to Groups - Symmetric Groups}
+\author{Alec Mouri}
+
+\maketitle
+\section*{Exercises}
+\begin{itemize}
+\item[(1)]
+$$\sigma = (1 \, 3 \, 5)(2 \, 4)$$
+$$\tau = (1 \, 5)(2 \, 3)$$
+$$\sigma^2 = (1 \, 5 \, 3)$$
+$$\sigma\tau = (2 \, 5 \, 3 \, 4)$$
+$$\tau\sigma = (1 \, 2 \, 4 \, 3)$$
+$$\tau^2\sigma = (1 \, 3 \, 5)(2 \, 4)$$
+\item[(2)]
+$$\sigma = (1 \, 13 \, 5 \, 10)(3 \, 15 \, 8)(4 \, 14 \, 11 \, 7 \, 12 \, 9)$$
+$$\tau = (1 \, 14)(2 \, 9 \, 15 \, 13 \, 4)(3 \, 10)(5 \, 12 \, 7)(8 \, 11)$$
+$$\sigma^2 = (1 \, 5)(3 \, 8 \, 15)(4 \, 11 \, 12)(7 \, 9 \, 14)(10 \, 13)$$
+$$\sigma\tau = (1 \, 11 \, 3)(2 \, 4)(5 \, 9 \, 8 \, 7 \, 10 \, 15)(13 \, 14)$$
+$$\tau\sigma = (1 \, 4)(2 \, 9)(3 \, 13 \, 12 \, 15 \, 11 \, 5)(8 \, 10 \, 14)$$
+$$\tau^2\sigma = (1 \, 2 \, 15 \, 8 \, 3 \, 4 \, 14 \, 11 \, 12 \, 13 \, 7 \, 5 \, 10)$$
+\item[(3)]
+\subsection*{Exercise 1}
+$$\sigma = (1 \, 3 \, 5)(2 \, 4)$$
+$$\sigma^2 = (1 \, 5 \, 3)$$
+$$\sigma^3 = (2 \, 4)$$
+$$\sigma^4 = (1 \, 3 \, 5)$$
+$$\sigma^5 = (1 \, 5 \, 3)(2 \, 4)$$
+$$\sigma^6 = 1 \rightarrow |\sigma| = 6$$
+$$\tau = (1 \, 5)(2 \, 3)$$
+$$\tau^2 = 1 \rightarrow |\tau| = 2$$
+$$(\sigma^2)^3 = \sigma^6 = 1 \rightarrow |\sigma^2| = 3$$
+$$\sigma\tau = (2 \, 5 \, 3 \, 4)$$
+$$(\sigma\tau)^2 = (2 \, 3)(4 \, 5)$$
+$$(\sigma\tau)^3 = (2 \, 4 \, 3 \, 5)$$
+$$(\sigma\tau)^4 = 1 \rightarrow |\sigma\tau| = 4$$
+$$\tau\sigma = (1 \, 2 \, 4 \, 3)$$
+$$(\tau\sigma)^2 = (1 \, 4)(2 \, 3)$$
+$$(\tau\sigma)^3 = (1 \, 3 \, 4 \, 2)$$
+$$(\tau\sigma)^4 = 1 \rightarrow |\tau\sigma| = 4$$
+$$\tau^2\sigma = (1 \, 3 \, 5)(2 \, 4)$$
+$$(\tau^2\sigma)^2 = (1 \, 5 \, 3)$$
+$$(\tau^2\sigma)^3 = (2 \, 4)$$
+$$(\tau^2\sigma)^4 = (1 \, 3 \, 5)$$
+$$(\tau^2\sigma)^5 = (1 \, 5 \, 3)(2 \, 4)$$
+$$(\tau^2\sigma)^6 = 1 \rightarrow |\tau^2\sigma| = 6$$
+\subsection*{Exercise 2}
+$$\sigma = (1 \, 13 \, 5 \, 10)(3 \, 15 \, 8)(4 \, 14 \, 11 \, 7 \, 12 \, 9)$$
+$$\sigma^2 = (1 \, 5)(3 \, 8 \, 15)(4 \, 11 \, 12)(7 \, 9 \, 14)(10 \, 13)$$
+$$\sigma^3 = (1 \, 10 \, 5 \, 13)(4 \, 7)(9 \, 11)(12 \, 14)$$
+$$\sigma^4 = (3 \, 15 \, 8)(4 \, 12 \, 11)(7 \, 14 \, 9)$$
+$$\sigma^5 = (1 \, 13 \, 5 \, 10)(3 \, 8 \, 15)(4 \, 9 \, 12 \, 7 \, 11 \, 14)$$
+$$\sigma^6 = (1 \, 5)(10 \, 13)$$
+$$\sigma^7 = (1 \, 10 \, 5 \, 13)(3 \, 15 \, 8)(4 \, 14 \, 11 \, 7 \, 12 \, 9)$$
+$$\sigma^8 = (3 \, 8 \, 15)(4 \, 11 \, 12)(7 \, 9 \, 14)$$
+$$\sigma^9 = (1 \, 13 \, 5 \, 10)(4 \, 7)(9 \, 11)(12 \, 14)$$
+$$\sigma^{10} = (1 \, 5)(3 \, 15 \, 8)(4 \, 12 \, 11)(7 \, 14 \, 9)(10 \, 13)$$
+$$\sigma^{11} = (1 \, 10 \, 5 \, 13)(3 \, 8 \, 15)(4 \, 9 \, 12 \, 7 \, 11 \, 14)$$
+$$\sigma^{12} = 1 \rightarrow |\sigma| = 12$$
+$$\tau = (1 \, 14)(2 \, 9 \, 15 \, 13 \, 4)(3 \, 10)(5 \, 12 \, 7)(8 \, 11)$$
+$$\tau^2 = (2 \, 15 \, 4 \, 9 \, 13)(5 \, 7 \, 12)$$
+$$\tau^3 = (1 \, 14)(2 \, 13 \, 9 \, 4 \, 15)(3 \, 10)(8 \, 11)$$
+$$\tau^4 = (2 \, 4 \, 13 \, 15 \, 9)(5 \, 12 \, 7)$$
+$$\tau^5 = (1 \, 14)(3 \, 10)(5 \, 7 \, 12)(8 \, 11)$$
+$$\tau^6 = (2 \, 9 \, 15 \, 13 \, 4)$$
+$$\tau^7 = (1 \, 14)(2 \, 15 \, 4 \, 9 \, 13)(3 \, 10) (5 \, 12 \, 7)(8 \, 11)$$
+$$\tau^8 = (2 \, 13 \, 9 \, 4 \, 15)(5 \, 7 \, 12)$$
+$$\tau^9 = (1 \, 14)(2 \, 4 \, 13 \, 15 \, 9)(3 \, 10)(8 \, 11)$$
+$$\tau^{10} = (5 \, 12 \, 7)$$
+$$\tau^{11} = (1 \, 14)(2 \, 9 \, 15 \, 13 \, 4)(3 \, 10)(5 \, 7 \, 12)(8 \, 11)$$
+$$\tau^{12} = (2 \, 15 \, 4 \, 9 \, 13)$$
+$$\tau^{13} = (1 \, 14)(2 \, 13 \, 9 \, 4 \, 15)(3 \, 10)(5 \, 12 \, 7)(8 \, 11)$$
+$$\tau^{14} = (2 \, 4 \, 13 \, 15 \, 9)(5 \, 7 \, 12)$$
+$$\tau^{15} = (1 \, 14)(3 \, 10)(8 \, 11)$$
+
+$$\tau^{16} = (2 \, 9 \, 15 \, 13 \, 4)(5 \, 12 \, 7)$$
+$$\tau^{17} = (1 \, 14)(2 \, 15 \, 4 \, 9 \, 13)(3 \, 10) (5 \, 7 \, 12)(8 \, 11)$$
+$$\tau^{18} = (2 \, 13 \, 9 \, 4 \, 15)$$
+$$\tau^{19} = (1 \, 14)(2 \, 4 \, 13 \, 15 \, 9)(3 \, 10)(5 \, 12 \, 7)(8 \, 11)$$
+$$\tau^{20} = (5 \, 7 \, 12)$$
+$$\tau^{21} = (1 \, 14)(2 \, 9 \, 15 \, 13 \, 4)(3 \, 10)(8 \, 11)$$
+$$\tau^{22} = (2 \, 15 \, 4 \, 9 \, 13)(5 \, 12 \, 7)$$
+$$\tau^{23} = (1 \, 14)(2 \, 13 \, 9 \, 4 \, 15)(3 \, 10)(5 \, 7 \, 12)(8 \, 11)$$
+$$\tau^{24} = (2 \, 4 \, 13 \, 15 \, 9)$$
+$$\tau^{25} = (1 \, 14)(3 \, 10)(5 \, 12 \, 7)(8 \, 11)$$
+$$\tau^{26} = (2 \, 9 \, 15 \, 13 \, 4)(5 \, 7 \, 12)$$
+$$\tau^{27} = (1 \, 14)(2 \, 15 \, 4 \, 9 \, 13)(3 \, 10)(8 \, 11)$$
+$$\tau^{28} = (2 \, 13 \, 9 \, 4 \, 15)(5 \, 12 \, 7)$$
+$$\tau^{29} = (1 \, 14)(2 \, 4 \, 13 \, 15 \, 9)(3 \, 10)(5 \, 12 \, 7)(8 \, 11)$$
+$$\tau^{30} = 1 \rightarrow |\tau| = 30$$
+$$\sigma\tau = (1 \, 11 \, 3)(2 \, 4)(5 \, 9 \, 8 \, 7 \, 10 \, 15)(13 \, 14)$$
+$$(\sigma\tau)^2 = (1 \, 3 \, 11)(5 \, 8 \, 10)(7 \, 15 \, 9)$$
+$$(\sigma\tau)^3 = (2 \, 4)(5 \, 7)(8 \, 15)(9 \, 10)(13 \, 14)$$
+$$(\sigma\tau)^4 = (1 \, 11 \, 13)(5 \, 10 \, 8)(7 \, 9 \, 15)$$
+$$(\sigma\tau)^5 = (1 \, 3 \, 11)(2 \, 4)(5 \, 15 \, 10  \, 7 \, 8 \, 9)(13 \, 14)$$
+$$(\sigma\tau)^6 = 1 \rightarrow |\sigma\tau| = 6$$
+$$\tau\sigma = (1 \, 4)(2 \, 9)(3 \, 13 \, 12 \, 15 \, 11 \, 5)(8 \, 10 \, 14)$$
+$$(\tau\sigma)^2 = (3 \, 12 \, 11)(5 \, 13 \, 15)(8 \, 14 \, 10)$$
+$$(\tau\sigma)^3 = (1 \, 4)(2 \, 9)(3 \, 15)(5 \, 12)(11 \, 13)$$
+$$(\tau\sigma)^4 = (3 \, 11 \, 12)(5 \, 15 \, 13)(8 \, 10 \, 14)$$
+$$(\tau\sigma)^5 = (1 \, 4)(2 \, 9)(3 \, 5 \, 11 \, 15 \, 12 \, 13)(8 \, 14 \, 10)$$
+$$(\tau\sigma)^6 = 1 \rightarrow |\tau\sigma| = 6$$
+$$\tau^2\sigma = (1 \, 2 \, 15 \, 8 \, 3 \, 4 \, 14 \, 11 \, 12 \, 13 \, 7 \, 5 \, 10)$$
+$$(\tau^2\sigma)^2 = (1 \, 15 \, 3 \, 14 \, 12 \, 7 \, 10 \, 2 \, 8 \, 4 \, 11 \, 13 \, 5)$$
+$$(\tau^2\sigma)^3 = (1 \, 8 \, 14 \, 13 \, 10 \, 15 \, 4 \, 12 \, 5 \, 2 \, 3 \, 11 \, 7)$$
+$$(\tau^2\sigma)^4 = (1 \, 3 \, 12 \, 10 \, 8 \, 11 \, 5 \, 15 \, 14 \, 7 \, 2 \, 4 \, 13)$$
+$$(\tau^2\sigma)^5 = (1 \, 4 \, 7 \, 15 \, 11 \, 10 \, 3 \, 13 \, 2 \, 14 \, 5 \, 8 \, 12)$$
+$$(\tau^2\sigma)^6 = (1 \, 14 \, 10 \, 4 \, 5 \, 3 \, 7 \, 8 \, 13 \, 15 \, 12 \, 2 \, 11)$$
+$$(\tau^2\sigma)^7 = (1 \, 11 \, 2 \, 12 \, 15 \, 13 \, 8 \, 7 \, 3 \, 5 \, 4 \, 10 \, 14)$$
+$$(\tau^2\sigma)^8 = (1 \, 12 \, 8 \, 5 \, 14 \, 2 \, 13 \, 3 \, 10 \, 11 \, 15 \, 7 \, 4)$$
+$$(\tau^2\sigma)^9 = (1 \, 13 \, 4 \, 2 \, 7 \, 14 \, 15 \, 5 \, 11 \, 8 \, 10 \, 12 \, 3)$$
+$$(\tau^2\sigma)^{10} = (1 \, 7 \, 11 \, 3 \, 2 \, 5 \, 12 \, 4 \, 15 \, 10 \, 13 \, 14 \, 8)$$
+$$(\tau^2\sigma)^{11} = (1 \, 5 \, 13 \, 11 \, 4 \, 8 \, 2 \, 10 \, 7 \, 12 \, 14 \, 3 \, 15)$$
+$$(\tau^2\sigma)^{12} = (1 \, 10 , 5 \, 7 \, 13 \, 12 \, 11 \, 14 \, 4 \, 3 \, 8 \, 15 \, 2)$$
+$$(\tau^2\sigma)^{13} = 1 \rightarrow |\tau^2\sigma| = 13$$
+\item[(4)]
+Note for $a, b, c$,
+$$(a, b)^2 = 1 \rightarrow |(a, b)| = 2$$
+$$(a, b, c)^3 = (a, b, c)(a, c, b) = 1 \rightarrow |(a, b, c)| = 3$$
+$$(a, b, c, d)^4 = [(a, c)(b, d)]^2 = 1 \rightarrow |(a, b, c, d)| = 4$$
+\begin{itemize}
+\item[(a)]
+$$|1| = 1$$
+$$|(1 \, 2)| = 2$$
+$$|(1 \, 3)| = 2$$
+$$|(2 \, 3)| = 2$$
+$$|(1 \, 2 \, 3)| = 3$$
+$$|(1 \, 3 \, 2)| = 3$$
+\item[(b)]
+$$|1| = 1$$
+$$|(1 \, 2)| = 2$$
+$$|(1 \, 3)| = 2$$
+$$|(1 \, 4)| = 2$$
+$$|(2 \, 3)| = 2$$
+$$|(2 \, 4)| = 2$$
+$$|(3 \, 4)| = 2$$
+$$|(1 \, 2)(3 \, 4)| = 2$$
+$$|(1 \, 3)(2 \, 4)| = 2$$
+$$|(1 \, 4)(2 \, 3)| = 2$$
+$$|(1 \, 2 \, 3)| = 3$$
+$$|(1 \, 3 \, 2)| = 3$$
+$$|(1 \, 2 \, 4)| = 3$$
+$$|(1 \, 4 \, 2)| = 3$$
+$$|(1 \, 3 \, 4)| = 3$$
+$$|(1 \, 4 \, 3)| = 3$$
+$$|(2 \, 3 \, 4)| = 3$$
+$$|(2 \, 4 \, 3)| = 3$$
+$$|(1 \, 2 \, 3 \, 4| = 4$$
+$$|(1 \, 2 \, 4 \, 3| = 4$$
+$$|(1 \, 3 \, 2 \, 4| = 4$$
+$$|(1 \, 3 \, 4 \, 2| = 4$$
+$$|(1 \, 4 \, 2 \, 3| = 4$$
+$$|(1 \, 4 \, 3 \, 2| = 4$$
+\end{itemize}
+\item[(5)]
+$$\sigma = (1 \, 12 \, 8 \, 10 \, 4)(2 \, 13)(5 \, 11 \, 7)(6 \, 9)$$
+$$\sigma^2 = (1 \, 8 \, 4 \, 12 \, 10)(5 \, 7 \, 11)$$
+$$\sigma^3 = (1 \, 10 \, 12 \, 4 \, 8)(2 \, 13)(6 \, 9)$$
+$$\sigma^4 = (1 \, 4 \, 10 \, 8 \, 12)(5 \, 11 \, 7)$$
+$$\sigma^5 = (2 \, 13)(5 \, 7 \, 11)(6 \, 9)$$
+$$\sigma^6 = (1 \, 12 \, 8 \, 10 \, 4)$$
+$$\sigma^7 = (1 \, 8 \, 4 \, 12 \, 10)(2 \, 13)(5 \, 11 \, 7)(6 \, 9)$$
+$$\sigma^8 = (1 \, 10 \, 12 \, 4 \, 8)(5 \, 7 \, 11)$$
+$$\sigma^9 = (1 \, 4 \, 10 \, 8 \, 12)(2 \, 3)(6 \, 9)$$
+$$\sigma^{10} = (5 \, 11 \, 7)$$
+$$\sigma^{11} = (1 \, 12 \, 8 \, 10 \, 4)(2 \, 13)(5 \, 7 \, 11)(6 \, 9)$$
+$$\sigma^{12} = (1 \, 8 \, 4 \, 12 \, 10)$$
+$$\sigma^{13} = (1 \, 10 \, 12 \, 4 \, 8)(2 \, 13)(5 \, 11 \, 7)(6 \, 9)$$
+$$\sigma^{14} = (1 \, 4 \, 10 \, 8 \, 12)(5 \, 7 \, 11)$$
+$$\sigma^{15} = (2 \, 13)(6 \, 9)$$
+$$\sigma^{16} = (1 \, 12 \, 8 \, 10 \, 4)(5 \, 11 \, 7)$$
+$$\sigma^{17} = (1 \, 8 \, 4 \, 12 \, 10)(2 \, 13)(5 \, 7 \, 11)(6 \, 9)$$
+$$\sigma^{18} = (1 \, 10 \, 12 \, 4 \, 8)$$
+$$\sigma^{19} = (1 \, 4 \, 10 \, 8 \, 12)(2 \, 3)(5 \, 11 \, 7)(6 \, 9)$$
+$$\sigma^{20} = (5 \, 7 \, 11)$$
+$$\sigma^{21} = (1 \, 12 \, 8 \, 10 \, 4)(2 \, 13)(6 \, 9)$$
+$$\sigma^{22} = (1 \, 8 \, 4 \, 12 \, 10)(5 \, 11 \, 7)$$
+$$\sigma^{23} = (1 \, 10 \, 12 \, 4 \, 8)(2 \, 13)(5 \, 7 \, 11)(6 \, 9)$$
+$$\sigma^{24} = (1 \, 4 \, 10 \, 8 \, 12)$$
+$$\sigma^{25} = (2 \, 13)(5 \, 11 \, 7)(6 \, 9)$$
+$$\sigma^{26} = (1 \, 12 \, 8 \, 10 \, 4)(5 \, 7 \, 11)$$
+$$\sigma^{27} = (1 \, 8 \, 4 \, 12 \, 10)(2 \, 13)(6 \, 9)$$
+$$\sigma^{28} = (1 \, 10 \, 12 \, 4 \, 8)(5 \, 11 \, 7)$$
+$$\sigma^{29} = (1 \, 4 \, 10 \, 8 \, 12)(2 \, 3)(5 \, 7 \, 11)(6 \, 9)$$
+$$\sigma^{30} = 1 \rightarrow |\sigma| = 30$$
+\item[(6)]
+$(1 \, 2 \, 3 \, 4), (1 \, 2 \, 4 \, 3), (1 \, 3 \, 2 \, 4), (1 \, 3 \, 4 \, 2), (1 \, 4 \, 2 \, 3), (1 \, 4 \, 3 \, 2)$
+\item[(7)]
+$(1 \, 2), (1 \, 3), (1 \, 4), (2 \, 3), (2 \, 4), (3 \, 4), (1 \, 2)(3 \, 4), (1 \, 3)(2 \, 4), (1 \, 4)(2 \, 3)$
+\item[(8)]
+If $\Omega = \left\lbrace 1, 2, 3, ... \right\rbrace$, then for every $i \in \Omega$, then there exists some permutation $\sigma_i \in S_\Omega$ such that $\sigma_i(1) = i$. Furthermore, for every $i, j \in \Omega$, $\sigma_i \neq \sigma_j$, ie. each permutation is distinct. There are infinitely many such permutations, so therefore $S_\Omega$ is an infinite group.
+\item[(9)]
+\begin{itemize}
+\item[(a)]
+$$\sigma = (1 \, 2 \, 3 \, 4 \, 5 \, 6 \, 7 \, 8 \, 9 \, 10 \, 11 \, 12)$$
+$$\sigma^2 = (1 \, 3 \, 5 \, 7 \, 9 \, 11)(2 \, 4 \, 6 \, 8 \, 10 \, 12)$$
+$$\sigma^3 = (1 \, 4 \, 7 \, 10)(2 \, 5 \, 8 \, 11)(3 \, 6 \, 9 \, 12)$$
+$$\sigma^4 = (1 \, 5 \, 9)(2 \, 6 \, 10)(3 \, 7 \, 11)(4 \, 8 \, 12)$$
+$$\sigma^5 = (1 \, 6 \, 11 \, 4 \, 9 \, 2 \, 7 \, 12 \, 5 \, 10 \, 3 \, 8)$$
+$$\sigma^6 = (1 \, 7)(2 \, 8)(3 \, 9)(4 \, 10)(5 \, 11)(6 \, 12)$$
+$$\sigma^7 = (1\, 8 \, 3 \, 10 \, 5 \, 12 \, 7 \, 2 \, 9 \, 4 \, 11 \, 6)$$
+$$\sigma^8 = (1 \, 9 \, 5)(2 \, 10 \, 6)(3 \, 11 \, 7)(4 \, 12 \, 8)$$
+$$\sigma^9 = (1 \, 10 \, 7 \, 4)(2 \, 11 \, 8 \, 5)(3 \, 12 \, 9 \, 6)$$
+$$\sigma^{10} = (1 \, 11 \, 9 \, 7 \, 5 \, 3)(2 \, 12 \, 10 \, 8 \, 6 \, 4)$$
+$$\sigma^{11} = (1 \, 12 \, 11 \, 10 \, 9 \, 8 \, 7 \, 6 \, 5 \, 4 \, 3 \, 2)$$
+$$\sigma^{12} = 1$$
+So $\sigma^i$ is a 12-cycle when $i \equiv 1, 5, 7, 11 \mod 12$
+\item[(b)]
+$$\tau = (1 \, 2 \, 3 \, 4 \, 5 \, 6 \, 7 \, 8)$$
+$$\tau^2 = (1 \, 3 \, 5 \, 7)(2 \, 4 \, 6 \, 8)$$
+$$\tau^3 = (1 \, 4 \, 7 \, 2 \, 5 \, 8 \, 3 \, 6)$$
+$$\tau^4 = (1 \, 5)(2 \, 6)(3 \, 7)(4 \, 8)$$
+$$\tau^5 = (1 \, 6 \, 3 \, 8 \, 5 \, 2 \, 7 \, 4)$$
+$$\tau^6 = (1 \, 7 \, 5 \, 3)(2 \, 8 \, 6 \, 4)$$
+$$\tau^7 = (1 \, 8 \, 7 \, 6 \, 5 \, 4 \, 3 \, 2)$$
+$$\tau^8 = 1$$
+So $\tau^i$ is an 8-cycle when $i \equiv 1, 3, 5, 7 \mod 8$.
+\item[(c)]
+$$\omega = (1 \, 2 \, 3 \, 4 \, 5 \, 6 \, 7 \, 8 \, 9 \, 10 \, 11 \, 12 \, 13 \, 14)$$
+$$\omega^2 = (1 \, 3 \, 5 \, 7 \, 9 \, 11 \, 13)(2 \, 4 \, 6 \, 8 \, 10 \, 12 \, 14)$$
+$$\omega^3 = (1 \, 4 \, 7 \, 10 \, 13 \, 2 \, 5 \, 8 \, 11 \, 14 \, 3 \, 6 \, 9 \, 12)$$
+$$\omega^4 = (1 \, 5 \, 9 \, 13 \, 3 \, 7 \, 11)(2 \, 6 \, 10 \, 14 \, 4 \, 8 \, 12)$$
+$$\omega^5 = (1 \, 6 \, 11 \, 2 \, 7 \, 12 \, 3 \, 8 \, 13 \, 4 \, 9 \, 14 \, 5 \, 10)$$
+$$\omega^6 = (1 \, 7 \, 13 \, 5 \, 11 \, 3 \, 9)(2 \, 8 \, 14 \, 6 \, 12 \, 4 \, 10)$$
+$$\omega^7 = (1 \, 8)(2 \, 9)(3 \, 10)(4 \, 11)(5 \, 12)(6 \, 13)(7 \, 14)$$
+$$\omega^8 = (1 \, 9 \, 3 \, 11 \, 5 \, 13 \, 7)(2 \, 10 \, 4 \, 12 \, 6 \, 14 , 8)$$
+$$\omega^9 = (1 \, 10 \, 5 \, 14 \, 9 \, 4 \, 13 \, 8 \, 3 \, 12 \, 7 \, 2 \, 11 \, 6)$$
+$$\omega^{10} = (1 \, 11 \, 7 \, 3 \, 13 \, 9 \, 5)(2 \, 12 \, 8 \, 4 \, 14 \, 10 \, 6)$$
+$$\omega^{11} = (1 \, 12 \, 9 \, 6 \, 3 \, 14 \, 11 \, 8 \, 5 \, 2 \, 13 \, 10 \, 7 \, 4)$$
+$$\omega^{12} = (1 \, 13 \, 11 \, 9 \, 7 \, 5 \, 3)(2 \, 14 \, 12 \, 10 \, 8 \, 6 \, 4)$$
+$$\omega^{13} = (1 \, 14 \, 13 \, 12 \, 11 \, 10 \, 9 \, 8 \, 7 \, 6 \, 5 \, 4 \, 3 \, 2)$$
+$$\omega^{14} = 1$$
+So $\omega^i$ is a 14-cycle when $i \equiv 1, 3, 5, 9, 11, 13 \equiv 14$.
+\end{itemize}
+\item[(10)]
+Let $\sigma$ be the $m$-cycle $(a_0 \, a_1 \, ... \, a_{m - 1})$. Observe that
+$\sigma(a_k) = a_{k + 1 \mod m}$. Suppose for some $i < m$ that $\sigma^i(a_k) = a_{k + i \mod m}$. Then $\sigma^{i+1}(a_k) = \sigma(\sigma^i(a_k)) = \sigma(a_{k + i \mod m}) = \sigma(a_{k + i + 1 \mod m})$. If $i = m$, then $\sigma^m(a_k) = a_{k + m \mod m} = a_k$, so therefore $\sigma^m = 1$, and for all $i < m$, $\sigma^i \neq 1$. Therefore, $|\sigma| = m$.
+\item[(11)]
+Lemma: If $i$ is relatively prime to $m$, then $ki \equiv 0 \mod m$ only if $k \equiv 0 \mod m$. Proof: By the Fundamental Theorem of Algebra, we can write $i$ and $m$ as products of primes: $i = a_1^{\alpha_1}a_2^{\alpha_2}...a_x^{\alpha_x}$ and $m = b_1^{\beta_1}b_2^{\beta_2}...b_y^{\beta_y}$, where each $\alpha, \beta \geq 1$. Since $(i, m) = 1$, then $a_1, a_2, ..., a_x$ is distinct from each $b_1, b_2, ..., b_y$. So therefore if $ki \equiv 0 \mod m$, for some $k$, then $ki = nm$, for $n \in \mathbb{Z}$. Then $ka_1^{\alpha_1}a_2^{\alpha_2}...a_x^{\alpha_x} = nb_1^{\beta_1}b_2^{\beta_2}...b_y^{\beta_y}$, ie. $k$ divides $b_1^{\beta_1}b_2^{\beta_2}...b_y^{\beta_y}$. Thus, $k \equiv 0 \mod m$. 
+
+Let $\sigma = (a_0 \, a_1 \, ... \, a_{m - 1})$. Suppose $\sigma^i$ is an $m$-cycle. Then we can write $\sigma^i$ as $\sigma^i = (a_0 \, a_{i} \, a_{2i \mod m} \, ... \, a_{(m - 1)i \mod m})$, and $a_1$ appears in the cycle. Then for some $c \in \mathbb{Z}/m\mathbb{Z}$, $ci \equiv 1 \mod m$. By Proposition 4 of Chapter 0, Section 3, then $i$ is relatively prime to $m$.
+
+Suppose $i$ is relatively prime to $m$. From the Lemma, $ki \equiv 0 \mod m$ only if $k \equiv 0 \mod m$, ie. the order of the $\overline{i}$ of the additive group $\mathbb{Z}/m\mathbb{Z}$ is $m$. Therefore, from Exercise 32 of Chapter 1, Section 1, $a_0, a_i, a_{2i \mod m}, ..., a_{(m - 1)i \mod m}$ are all distinct. Therefore, \\ $\sigma^i = (a_0 \, a_i \, a_{2i \mod m} \, a_{(m - 1)i \mod m}$ is an $m$-cycle.
+\item[(12)]
+\begin{itemize}
+\item[(a)]
+Let $\sigma = (1 \, 3 \, 5 \, 7 \, 9 \, 2 \, 4 \, 6 \, 8 \, 10)$. Then,
+$$\sigma^2 = (1 \, 5 \, 9 \, 4 \, 8)(3 \, 7 \, 2 \, 6 \, 10)$$
+$$\sigma^3 = (1 \, 7 \, 4 \, 10 \, 5 \, 2 \, 8 \, 3 \, 9 \, 6)$$
+$$\sigma^4 = (1 \, 9 \, 8 \, 5 \, 4)(3 \, 2 \, 10 \, 7 \, 6)$$
+$$\sigma^5 = (1 \, 2)(3 \, 4)(5 \, 6)(7 \, 8)(9 \, 10)$$
+Therefore, $\tau = \sigma^5$.
+\item[(b)]
+Let $n = 5$, ie. $\sigma$ is a 5-cycle. Without loss of generality, let $\sigma(1) = 2$ and $\sigma(3) = 4$. Then $\sigma(5) = 5$. So, for all $k$, $\sigma^k(5) = 5$. Therefore, $\tau = \sigma^k \neq (1 \, 2)(3 \, 4 \, 5)$. So, $n \geq 6$. Suppose without loss of generality that $\sigma(a) = b$ where $a = 1,2,3,4,5,6,...,n$, and $b = 6,7,...,n$. Let $k > 1$. Note that $\sigma^k(b) = b$. Then $\sigma^{k-1}(\sigma(a)) = b \rightarrow \sigma^{k-1}(b) = b$. And, $\sigma^{k-1}(a) = \sigma^{-1}(\sigma^k(a)) = b \rightarrow \sigma^{-1}(b) = b$. Since $\sigma^{-1}(\sigma(a)) = a$, And $\sigma^{-1}(\sigma(a)) = \sigma^{-1}(b) = b$, then $a = b$. So therefore for $a_1, a_2 = 1,2,3,4,5$, $\sigma(a_1) = a_2$. But then from the discussion above, $\tau \neq (1 \, 2)(3 \, 4 \, 5)$.
+\end{itemize}
+\item[(13)]
+Lemma: If $G$ is a group with commuting elements $a_1, a_2, ..., a_n$, then for $m \geq 1$, $(\prod_i a_i)^m = \prod_i a_i^m$. Proof: If $n = 1$, then the statement is trivial. Suppose the statement holds true for some $n$. Then  $(\prod_i a_i)^m = (a_{n+1}\prod_{i \leq n} a_i)^m = (a_{n+1})^m\prod_{i \leq n}a_i^m = \prod_i a_i^m$.
+
+Suppose $\sigma \in S_n$ has order 2. Then for any $a$, $\sigma^2(a) = a$. Moreover, for some $b \neq c$, $\sigma(b) = c$. Since $\sigma^2(b) = b$, then $\sigma^2(b) = \sigma(\sigma(b)) = \sigma(c) = b$, ie. $b, c$ form a 2-cycle in the cyclic decomposition of $\sigma$. Therefore, the cyclic decomposition of $\sigma$ is composed of a product of commuting 2-cycles.
+
+Suppose $\sigma \in S_n$ is a product of commuting 2-cycles. Consider the 2-cycle $(a \, b)$ in the cyclic decomposition of $\sigma$. Then $\sigma(a) = b$, and $\sigma^2(a) = a$. Likewise, $\sigma^2(b) = b$. Therefore, by the lemma, $|\sigma| = 2$.
+\item[(14)]
+Suppose $\sigma \in S_n$ has order $p$. Then for some $a, b \in 1, 2, ..., n$, $\sigma(a) = b$, and $\sigma^p(a) = a$. Suppose $i < p$ is the smallest positive integer such that, $\sigma^i(a) = a$. Then $i$ divides $p$. But $p$ is prime, so then $i = 1$, or does not exist. Therefore, $\sigma(a), \sigma^2(a), ..., \sigma^{p-1}(a)$ are either all distinct or all equal. So, If $a$ is part of a $>1$-cycle, then the cycle can be written as $(a \, \sigma(a) \, \sigma^2(a) \, ... \, \sigma^{p-1}(a))$. Thus, the cyclic decomposition of $\sigma$ is a product of $p$-cycles.
+
+Suppose the cyclic decomposition of $\sigma$ is a product of commuting $p$-cycles. Consider the $p$-cycle $(a_1 \, a_2 \, ... \, a_p)$ in the cyclic decomposition of $\sigma$. By Exercise 10, $\sigma^p(a_1) = a_1$. Thus, by the lemma from Exercise 13, $|\sigma| = p$.
+
+Suppose $\sigma = (1 \, 2)(3 \, 4 \, 5 \, 6)$. $|\sigma| = 4$, but $\sigma$'s cyclic decomposition is clearly not commuting 2-cycles.
+\item[(15)]
+Let $\sigma \in S_n$. We can write $\sigma$ as a product of disjoint cycles: $\sigma = \prod_i \sigma_i$. Let $n_i$ be the length of $\sigma_i$, and let $m = |\sigma|$. Note that from Exercise 10 that $|\sigma_i| = n_i$. Then by the lemma from Exercise 13, $\sigma^m = (\prod_i \sigma_i)^m = \prod_i \sigma_i^m = 1$. Therefore, for each $\sigma_i$, $\sigma_i^m = \sigma_i^{n_i} = 1$. Since $n_i \leq m$, then $n_i$ divides $m$. Therefore, $m = lcm\left\lbrace n_i \right\rbrace$.
+\item[(16)]
+We can choose an $m$-cycle in the following manner: pick the first number in the cycle, then pick the second number, etc. until we pick the $m$th number. There are $n$ possibilities for picking the first number, $n - 1$ possibilities for picking the second number, etc. Ie. there are $n - i + 1$ possibilities for picking the $i$th number. Therefore, there are $n(n - 1)(n - 2)...(n - m + 1)$ ways of forming an $m$-cycle. For a particular $m$ cycle, there are $m$ ways to represent that $m$ cycle, ie. there are $m$ ways to choose it. Therefore, the total number of $m$-cycles is:
+$$\frac{n(n - 1)(n - 2)...(n - m + 1)}{m}$$
+\item[(17)]
+By the procedure from Exercise 16, we can choose an order list of 4 numbers: there are $n(n - 1)(n - 2)(n - 3)$ such lists. For this list, there are 4 ways to represent it. Consider the representation $(a \, b \, c \, d)$. Partition the representation so that $a, b$ are in one cycle and $c, d$ are in an either, so we have $(a \, b)(c \, d)$. There are 2 ways to order those cycles, ie. $(a \, b)(c \, d)$, and $(c \, d)(a \, b)$. Therefore, there are 8 total representations of 2 2-cycles. Thus the number of disjoint 2-cycles is:
+$$\frac{n(n - 1)(n - 2)(n - 3)}{8}$$
+\item[(18)]
+Writing out all possible cyclic decompositions of $S_5$:
+$$(a \, b \, c \, d \, e): LCM = 5$$
+$$(a \, b \, c \, d): LCM = 4$$
+$$(a \, b \, c)(d \, e): LCM = 6$$
+$$(a \, b \, c): LCM = 3$$
+$$(a \, b)(c \, d): LCM = 2$$
+$$(a \, b): LCM = 2$$
+$$1: LCM = 1$$
+Thus by Exercise 15, for $1 \leq n \leq 6$, $S_n$ contains an element of order $n$.
+\item[(19)]
+Writing out all possible cyclic decompositions of $S_7$:
+$$(a \, b \, c \, d \, e \, f \, g): LCM = 7$$
+$$(a \, b \, c \, d \, e \, f): LCM = 6$$
+$$(a \, b \, c \, d \, e)(f \, g): LCM = 10$$
+$$(a \, b \, c \, d \, e): LCM = 5$$
+$$(a \, b \, c \, d)(e \, f \, g): LCM = 12$$
+$$(a \, b \, c \, d)(e \, f): LCM = 4$$
+$$(a \, b \, c \, d): LCM = 4$$
+$$(a \, b \, c)(d \, e \, f): LCM = 3$$
+$$(a \, b \, c)(d \, e)(f \, g): LCM = 6$$
+$$(a \, b \, c)(d \, e): LCM = 6$$
+$$(a \, b \, c): LCM = 3$$
+$$(a \, b)(c \, d)(e \, f): LCM = 2$$
+$$(a \, b)(c \, d): LCM = 2$$
+$$(a \, b): LCM = 2$$
+$$1: LCM = 1$$
+Thus by Exercise 15, for $n = 1, 2, 3, 4, 5, 6, 7, 10, 12$, $S_n$ contains an element of order $n$.
+\item[(20)]
+Consider the elements $(1 \, 2)$ and $(1 \, 3)$ of $S_3$. We can then construct all other elements of $S_3$:
+$$(1 \, 2)(1 \, 3) = (1 \, 3 \, 2)$$
+$$(1 \, 3)(1 \, 2) = (1 \, 2 \, 3)$$
+$$(1 \, 3)(1 \, 2)(1 \, 3) = (1 \, 2 \, 3)(1 \, 3) = (2 \, 3)$$
+$$(1 \, 3) = (1 \, 3)$$
+$$(1 \, 2) = (1 \, 2)$$
+$$(1 \, 2)(1 \, 2) = 1$$
+We also have the following relations:
+$$(1 \, 2)^2 = 1$$
+$$(1 \, 3)^2 = 1$$
+$$(1 \, 3)(1 \, 2)(1 \, 3) = (1 \, 2)(1 \, 3)(1 \, 2)$$
+Thus, $S_3 = <a, b | a^2 = b^2 = 1, aba = bab>$, where $a = (1 \, 2)$ and $b = (1 \, 3)$
+\end{itemize}
+\end{document}
