@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\begin{document}
+\title{Introduction to Groups - Matrix Groups}
+\author{Alec Mouri}
+
+\maketitle
+\section*{Exercises}
+\begin{itemize}
+\item[(1)]
+Consider a $2 \times 2$ matrix
+$$A = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}$$
+where $a, b, c, d \in \mathbb{F}_2$. $A \in GL_2(\mathbb{F}_2)$ if $\det(A) = ad - bc \neq 0$. Ie. either $ad = 0$ and $bc = 1$, or $ad = 1$ and $bc = 0$. There are then 6 possible sets of values for $a, b, c, d$:
+$$a = 0, b = 1, c = 1, d = 0$$
+$$a = 1, b = 1, c = 1, d = 0$$
+$$a = 0, b = 1, c = 1, d = 1$$
+$$a = 1, b = 0, c = 0, d = 1$$
+$$a = 1, b = 1, c = 0, d = 1$$
+$$a = 1, b = 0, c = 1, d = 1$$
+Thus, $|GL_2(\mathbb{F}_2)| = 6$.
+\item[(2)]
+\begin{itemize}
+\item[1.]
+$$\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}^2 = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} \rightarrow \left| \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix} \right| = 2$$
+\item[2.]
+$$\begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix}^2 = \begin{pmatrix}
+0 & 1 \\
+1 & 1
+\end{pmatrix}$$
+$$\begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix}^3 = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} \rightarrow \left| \begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix} \right| = 3$$
+\item[3.]
+$$\begin{pmatrix}
+0 & 1 \\
+1 & 1
+\end{pmatrix}^2 = \begin{pmatrix}
+1 & 1 \\
+1 & 0
+\end{pmatrix}$$
+$$\begin{pmatrix}
+0 & 1 \\
+1 & 1
+\end{pmatrix}^3 = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} \rightarrow \left| \begin{pmatrix}
+0 & 1 \\
+1 & 1
+\end{pmatrix} \right| = 3$$
+\item[4.]
+$$\left| \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} \right| = 1$$
+\item[5.]
+$$\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}^2 = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} \rightarrow \left| \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix} \right| = 2$$
+\item[6.]
+$$\begin{pmatrix}
+1 & 0 \\
+1 & 1
+\end{pmatrix}^2 = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} \rightarrow \left| \begin{pmatrix}
+1 & 0 \\
+1 & 1
+\end{pmatrix} \right| = 2$$
+\end{itemize}
+\item[(3)]
+Let
+$$a = \begin{pmatrix}
+0 & 1 \\
+1 & 1
+\end{pmatrix}, b = \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}$$
+Then
+$$ab = \begin{pmatrix}
+0 & 1 \\
+1 & 1
+\end{pmatrix}\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix} = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}$$
+But
+$$ba = \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+0 & 1 \\
+1 & 1
+\end{pmatrix} = \begin{pmatrix}
+1 & 0 \\
+1 & 1
+\end{pmatrix}$$
+Since $ab \neq ba$, then $GL_2(\mathbb{F}_2)$ is non-abelian.
+\item[(4)]
+If $n$ is not prime, then for some prime $p$, then $n = pk$ for $k \in \mathbb{Z}^+$. From Chapter 0, Section 3, Exercise 12, we know that there cannot be an integer $c$ such that $pc \equiv 1 \mod n$. Therefore, $p$ does not have a multiplicative inverse in $\mathbb{Z}/n\mathbb{Z}$, therefore $\mathbb{Z}/n\mathbb{Z}$ is not a field.
+\item[(5)]
+Suppose $F$ has an infinite number of elements. For each $a \in F$, let $A = aI$, where $I$ is the $n \times n$ identity matrix. Since $\det(A) = a^n$, then $A \in GL_n(F)$. There are infinitely many such matrices, so $GL_n(F)$ is an infinite group.
+
+Suppose $F$ has a finite number of elements. For an $n \times n$ matrix, there are $n^2$ elements of the matrix. Therefore there are $|F|^{n^2}$ $n \times n$ matrices. Since $GL_n(F)$ is a subset of $n \times n$ matrices, then $GL_n(F)$ is a finite group.
+\item[(6)]
+For an $n \times n$ matrix, there are $n^2$ elements of the matrix. Therefore there are $q^{n^2}$ $n \times n$ matrices. Since $GL_n(F)$ is a subset of $n \times n$ matrices, then $|GL_n(F)| \leq q^{n^2}$. Since the zero matrix is not in $GL_n(F)$, then the inequality is strict.
+\item[(7)]
+The total number of $2 \times 2$ matrices over $\mathbb{F}_p$ is $p^4$. Consider an non-invertible matrix. Then one row is a multiple of the other. For a particular row where at least one entry is nonzero, there are $p$ rows that are multiples of that entry. There are $p^2 - 1$ such rows. If both entries are nonzero, then $p^2$ rows are multiples of that row. Therefore, there are $p(p^2 - 1) + p^2 = p^3 + p^2 - p$. Therefore,
+$$|GL_2(\mathbb{F}_p)| = p^4 - (p^3 + p^2 - p) = p^4 - p^3 - p^2 + p$$
+\item[(8)]
+\end{itemize}
+\end{document}
