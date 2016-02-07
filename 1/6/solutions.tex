@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage{amssymb}
+\usepackage{amsmath, amssymb}
 \begin{document}
 \title{Introduction to Groups - Homomorphisms and Isomorphisms}
 \author{Alec Mouri}
@@ -56,6 +56,95 @@ There are 2 elements of $D_8$ that have order 4: $r$ and $r^3$. But there are 6 
 Note that $|S_n| = n!$, and $|S_m| = m!$. Thus if $n \neq m$, then $|S_n| \neq |S_m|$, so therefore $S_n$ and $S_m$ are not isomorphic.
 \item[(9)]
 There is at least 1 element of $D_{24}$ that has order 12: $r$. But, there are no elements of $S_4$ that have order 12. In particular, the maximum order of any element of $S_4$ is 4. Thus, $D_{24}$ and $S_4$ are not isomorphic.
-\item[(10)] 
+\item[(10)]
+\begin{itemize}
+\item[(a)]
+Choose $a \in \Delta$ and $b \in \Omega$ such that $\theta(a) = b$. Then
+$$\varphi(\sigma)(b) = \theta(\sigma(\theta^{-1}(b))) = \theta(\sigma(a)) \in \Omega$$
+So, $\varphi$ is well defined
+\item[(b)]
+Define $\eta: S_\Omega \rightarrow S_\Delta$ to be $\eta(\tau) = \theta^{-1} \circ \tau \circ \theta$. Then
+$$\eta(\varphi(\sigma)) = \theta^{-1} \circ \theta \circ \sigma \circ \theta^{-1} \circ \theta = \sigma$$
+And
+$$\varphi(\eta(\tau)) = \theta \circ \theta^{-1} \circ \tau \circ \theta \circ theta^{-1} = \tau$$
+Since $\eta$ is a two-sided inverse of $\varphi$, then $\varphi$ is a bijection.
+\item[(c)]
+$$\varphi(\sigma \circ \tau) = \theta \circ \sigma \circ \tau \circ \theta^{-1} = \theta \circ \sigma \circ \theta^{-1} \circ \theta \circ \tau \circ \theta^{-1} = \varphi(\sigma) \circ \varphi(\tau)$$
+\end{itemize}
+\item[(11)]
+Define $\varphi: A \times B \rightarrow B \times A$ to be $\varphi((a, b)) = (b, a)$. Consider $(a, b), (c, d) \in A \times B$. Then
+$$\varphi((a, b)(c, d)) = \varphi((ac, bd)) = (bd, ac) = (b, a)(d, c) = \varphi(a, b)\varphi(d, c)$$
+So, $\varphi$ is homomorphic. Moreover, $\varphi$ is a bijection, define $\eta: B \times A \rightarrow A \times B$ to be $\eta((b, a)) = (a, b)$. Then $\varphi(\eta(b, a)) = (b, a)$, and $\eta(\varphi(a, b)) = (a, b)$ for $a \in A$ and $b \in B$. Therefore, $\varphi$ is an isomorphism, and $A \times B \cong B \times A$. 
+\item[(12)]
+Define $\varphi: (A \times B) \times C \rightarrow A \times (B \times C)$ to be $\varphi(((a, b), c)) = (a, (b, c))$. Consider $((a, b), c), ((d, e), f) \in (A \times B) \times C$. Then
+$$\varphi(((a, b), c)((d, e), f)) = \varphi(((ad, be), cf)) = (ad, (be, cf))$$
+$$= (a, (b, c))(d, (e, f)) = \varphi(((a, b), c))\varphi(((d, e), f))$$
+So, $\varphi$ is homomorphic. Moreover, $\varphi$ is a bijection, define $\eta: A \times (B \times C) \rightarrow (A \times B) \times C$ to be $\eta((a, (b, c))) = ((a, b), c)$. Then $\varphi(\eta(a, (b, c))) = (a, (b, c))$, and $\eta(\varphi(((a, b), c))) = ((a, b), c)$ for $a \in A$, $b \in B$, $c \in C$. Therefore, $\varphi$ is an isomorphism, and $(A \times B) \times C \cong A \times (B \times C)$.
+\item[(13)]
+Let $\mathcal{H}$ be the image of $\varphi$. Clearly, $\mathcal{H} \subseteq H$. Suppose we have $h_1, h_2 \in H$ such that there exists $g_1, g_2 \in G$ such that $\varphi(g_1) = h_1, \varphi(g_2) = h_2$, ie. $h_1, h_2 \in \mathcal{H}$. Then
+$$h_1h_2 = \varphi(g_1)\varphi(g_2) = \varphi(g_1g_2)$$
+Ie. $h_1h_2 \in\mathcal{H}$, so therefore $\mathcal{H}$ is closed under the group operation. Furthermore, for some $g_1 \in G$ with image $h_1$, then
+$$\varphi(g_1^{-1}) = \varphi(g_1)^{-1} = h_1^{-1}$$
+Ie. $h_1^{-1} \in \mathcal{H}$, so therefore $\mathcal{H}$ is closed under inverses. Thus, $\mathcal{H}$ is a subgroup of $H$.
+
+Suppose $\varphi$ is injective. Let $\tau: G \rightarrow \mathcal{H}$ to be defined as: for $g \in G$, then $\tau(g) = \varphi(g)$. Clearly, $\tau$ is bijective and homomorphic, and is therefore an isomorphism. Thus, $G \cong \mathcal{H}$.
+\item[(14)]
+Let $\mathcal{K}$ be the kernel of $\varphi$. Suppose $k_1, k_2 \in \mathcal{K}$. Then 
+$$\varphi(k_1k_2) = \varphi(k_1)\varphi(k_2) = 1$$
+Thus, $k_1, k_2 \in \mathcal{K}$, and so $\mathcal{K}$ is closed under the group operation. Furthermore, for $k \in \mathcal{K}$, then
+$$\varphi(k^{-1}) = \varphi(k)^{-1} = 1$$
+Ie, $k^{-1} \in \mathcal{K}$, and $\mathcal{K}$ is closed under inverses. Thus, $\mathcal{K}$ is a subgroup of $G$.
+
+If $\varphi$ is injective, then there is precisely one element $g \in G$ such that $\varphi(g) = 1$. In particular, $g = 1$ (from the lemma from Exercise 1). Therefore, $\mathcal{K}$ is the identity subgroup.
+
+If $\varphi$ is not injective, then for some distinct $g_1, g_2 \in G$, then $\varphi(g_1) = \varphi(g_2)$. Then
+$$1 = \varphi(g_1)\varphi(g_2)^{-1} = \varphi(g_1)\varphi(g_2^{-1}) = \varphi(g_1g_2^{-1})$$
+Since inverses are distinct, then $g_1g_2^{-1} \neq 1$, and $g_1g_2^{-1} \in G$. Therefore, $\mathcal{K}$ is not the identity subgroup of $G$.
+\item[(15)]
+Let $(x_1, y_1), (x_2, y_2) \in \mathbb{R}^2$. Then
+$$\pi((x_1, y_1)(x_2, y_2)) = \pi((x_1x_2, y_1y_2)) = x_1x_2 = \pi((x_1, y_1))\pi((x_2, y_2))$$
+Therefore, $\pi$ is a homomorphism.
+
+Let $\Pi$ be the kernel of $\pi$. Note that for all $(x, y) \in \mathbb{R}^2$, $\pi((x, y)) = 1$ only if $x = 1$. Therefore,
+$$\Pi = \left\lbrace (1, y) \in \mathbb{R}^2 \right\rbrace$$
+\item[(16)]
+Let $(a_1, b_1), (a_2, b_2) \in G$. Then
+$$\pi_1((a_1, b_1)(a_2, b_2)) = \pi_1((a_1a_2, b_1b_2)) = a_1a_2 = \pi_1((a_1, b_1))\pi_1((a_2, b_2))$$
+And
+$$\pi_2((a_1, b_1)(a_2, b_2)) = \pi_2((a_1a_2, b_1b_2)) = b_1b_2 = \pi_2((a_1, b_1))\pi_2((a_2, b_2))$$
+Thus, $\pi_1$ and $\pi_2$ are homomorphisms.
+
+Let $\Pi_1$ be the kernel of $\pi_1$, and $\Pi_2$ be the kernel of $\pi_2$. Note that for $(a, b) \in G$, $\pi_1((a, b)) = a$ only if $a = 1$, and $\pi_2((a, b)) = b$ only if $b = 1$. Therefore,
+$$\Pi_1 = \left\lbrace (1, b) \in G \right\rbrace, \Pi_2 = \left\lbrace (a, 1) \in G \right\rbrace$$
+\item[(17)]
+Let $\varphi \equiv g \mapsto g^{-1}$
+
+Suppose $\varphi$ is a homomorphism. Then for $a, b \in G$,
+$$ab = \varphi((ab)^{-1}) = \varphi(b^{-1}a^{-1}) = \varphi(b^{-1})\varphi(a^{-1}) = ba$$
+Thus, $G$ is abelian.
+
+Suppose $G$ is abelian. Then for $a, b \in G$,
+$$\varphi(a^{-1})\varphi(b^{-1}) = ab = \varphi((ab)^{-1}) = \varphi(b^{-1}a^{-1}) = \varphi(a^{-1}b^{-1})$$
+Thus $\varphi$ is a homomorphism.
+\item[(18)]
+Let $\varphi \equiv g \mapsto g^2$.
+
+Suppose $\varphi$ is a homomorphism. Then for $a, b \in G$,
+$$abab = (ab)^2 = \varphi(ab) = \varphi(a)\varphi(b) = a^2b^2 = aabb \rightarrow ba = ab$$
+Therefore, $G$ is abelian.
+
+Suppose $G$ is abelian. Then for $a, b \in G$,
+$$\varphi(a)\varphi(b) = a^2b^2 = (ab)^2 = \varphi(ab)$$
+Thus, $\varphi$ is a homomorphism.
+\item[(19)]
+Let $\varphi \equiv z \mapsto z^k$. Let $z_1, z_2 \in G$. Note that since $G \subseteq \mathbb{C}$, then $G$ is abelian. Then
+$$\varphi(z_1z_2) = (z_1z_2)^k = z_1^kz_2^k = \varphi(z_1)\varphi(z_2)$$
+Therefore, $\varphi$ is a homomorphism. Define $\eta \equiv z \mapsto z^{1/k}$. Since
+$$(z^{1/k})^{nk} = z^{n} = 1$$
+Then $\eta$ maps from $G$ to itself. And,
+$$\varphi(\eta(z)) = \varphi(z^{1/k}) = z$$
+Thus, $\eta$ is a right inverse of $\varphi$, and therefore $\varphi$ is a surjection.
+
+Consider $z = e^{\frac{2\pi i}{k}} = \cos\left(\frac{2\pi}{k}\right) + i\sin\left(\frac{2\pi}{k}\right)$. Then $z^k = e^{2\pi i} = 1$, so $z \in G$. And, $\varphi(z) = z^k = 1$. But $z \neq 1$, so therefore $\varphi$ is not injective.
 \end{itemize}
 \end{document}
