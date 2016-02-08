@@ -146,5 +146,262 @@ $$\varphi(\eta(z)) = \varphi(z^{1/k}) = z$$
 Thus, $\eta$ is a right inverse of $\varphi$, and therefore $\varphi$ is a surjection.
 
 Consider $z = e^{\frac{2\pi i}{k}} = \cos\left(\frac{2\pi}{k}\right) + i\sin\left(\frac{2\pi}{k}\right)$. Then $z^k = e^{2\pi i} = 1$, so $z \in G$. And, $\varphi(z) = z^k = 1$. But $z \neq 1$, so therefore $\varphi$ is not injective.
+\item[(20)]
+Function composition is associative. Consider the trivial isomorphism: $\varphi: g \mapsto g$ for $g \in G$. Then for any $\eta \in AUT(G)$,
+$$(\eta \circ \varphi)(g) = \eta(\varphi(g)) = \eta(g)$$
+And
+$$(\varphi \circ \eta)(g) = \varphi(\eta(g)) = \eta(g)$$
+Thus, $\varphi$ is the identity isomorphism of $AUT(G)$. And, for any $\eta \in AUT(G)$, then define $\eta^{-1}: g \rightarrow h$, where $h$ is the fiber of $\eta$ over $g$ - Note that $|h| = 1$ since $\eta$ is a bijection. Then
+$$(\eta \circ \eta^{-1})(g) = \eta(h) = g$$
+And
+$$(\eta^{-1} \circ \eta)(g) = g$$
+Thus, $\eta \circ \eta^{-1} = \eta^{-1} \circ \eta = \varphi$, so therefore $\eta$ $AUT(G)$ is closed under inverses. Thus, $AUT(G)$ is a group under function composition.
+\item[(21)]
+Let $\varphi \equiv q \mapsto kq$. Consider $a, b \in \mathbb{Q}$. Then
+$$\varphi(a + b) = k(a + b) = ka + kb = \varphi(a) + \varphi(b)$$
+So $\varphi$ is a homomorphism. Let $q_1, q_2 \in \mathbb{Q}$, where $q_1 \neq q_2$. Then $\varphi(q_1) = kq_1 \neq kq_2 = \varphi(q_2)$, so $\varphi$ is injective. And, for $q \in \mathbb{Q}$, $\varphi(\frac{q}{k}) = q$, so therefore $\varphi$ is surjective. Thus, $\varphi$ is bijective, and an isomorphism.
+\item[(22)]
+Let $\varphi \equiv a \mapsto a^k$. Consider $a, b \in A$. Then
+$$\varphi(ab) = (ab)^k = a^kb^k = \varphi(a)\varphi(b)$$
+So, $\varphi$ is a homomorphism. Suppose $k = -1$. Since inverses are unique, then $\varphi$ is injective. And, for $a \in A$, $\varphi(a^{-1}) = a$, so $\varphi$ is surjective. Therefore, $\varphi$ is bijective, and an isomorphism.
+\item[(23)]
+Define a map $\varphi: G \rightarrow G \equiv x \mapsto x^{-1}\sigma(x)$. I claim that $\varphi$ is bijection. Let $a, b \in G$, where $a \neq b$. Then $\varphi(a) = a^{-1}\sigma(a)$, and $\varphi(b) = b^{-1}\sigma(b)$. Suppose $\varphi(a) = \varphi(b)$. Then 
+$$a^{-1}\sigma(a) = b^{-1}\sigma(b) \rightarrow ba^{-1} = \sigma(ba^{-1})$$
+But this is only true if $ba^{-1} = 1$, implying that $a = b$, a contradiction . Therefore, $\varphi$ is injective. Since $G$ is finite, then $\varphi$ is also surjective, and a bijection.
+
+Thus, for any $g \in G$, then $\exists x \in G$ such that $g = x^{-1}\sigma(x)$. Consider $g \in G$. Then for some $x \in G$,
+$$\sigma(g) = \sigma(x^{-1}\sigma(x)) = \sigma(x)^{-1}x = (x^{-1}\sigma(x))^{-1} = g^{-1}$$
+Therefore, for $a, b \in G$, then
+$$ab = ((ab)^{-1})^{-1} = \sigma((ab)^{-1}) = \sigma(b^{-1}a^{-1}) = \sigma(b^{-1})\sigma(a^{-1}) = ba$$
+Thus, $G$ is abelian.
+\item[(24)]
+Define $\varphi: G \rightarrow D_{2n}$ by $\varphi(x^a(xy)^b) = s^ar^b$, where $0 \leq a < 2$ and $0 \leq b < n$, ie. replace $x$ with $s$ and $xy$ with $r$. We know that $x^2 = 1$, $(xy)^n = 1$, and from Chapter 1, Section 2, Exercise 6, $(xy)x = x(xy)^{-1}$, thus the relations of $G$ are also satisfied by $D_{2n}$ under $\varphi$: thus the mapping is well defined. Consider $x^a(xy)^b, x^c(xy)^d \in G$. Then
+$$\varphi(x^a(xy)^bx^c(xy)^d) = \varphi(x^{a+c}(xy)^{d - b}) = s^{a+c}r^{d - b}$$
+$$= s^as^cr^{-b}r^d =  s^ar^bs^cr^d = \varphi(x^a(xy)^b)\varphi(x^c(xy)^d)$$
+Thus, $\varphi$ is a homomorphism. Since $s, r$ generate $D_{2n}$, then $\varphi$ is surjective. And, since $x(xy) = y$, then $x, xy$ generate $G$, and $|G| = |D_{2n}|$, so $\varphi$ is injective and bijective. Therefore, $\varphi$ is an isomorphism, and $G \cong D_{2n}$.
+\item[(25)]
+\begin{itemize}
+\item[(a)]
+Note that 
+$$\begin{pmatrix}
+1 \\
+0
+\end{pmatrix}, \begin{pmatrix}
+0 \\
+1
+\end{pmatrix}$$
+generate the $x, y$ plane. In particular, for any
+$$\begin{pmatrix}
+x \\
+y
+\end{pmatrix} \in \mathbb{R}^2$$
+Then
+$$\begin{pmatrix}
+x \\
+y
+\end{pmatrix} = x\begin{pmatrix}
+1 \\
+0
+\end{pmatrix} + y\begin{pmatrix}
+0 \\
+1
+\end{pmatrix}$$
+If $(1, 0)^\top$ is rotated by $\theta$, then $(1, 0)^\top \mapsto (\cos\theta, \sin\theta)^\top$. If $(0, 1)^\top$ is rotated by $\theta$, then $(1, 0)^\top \mapsto (\cos(\theta + \frac{\pi}{2}), \sin(\theta + \frac{\pi}{2}))^\top = (-\sin\theta, \cos\theta)^\top$. Therefore, rotating $(x, y)^\top$, then
+$$\begin{pmatrix}
+x \\
+y
+\end{pmatrix} \mapsto \begin{pmatrix}
+x\cos\theta - y\sin\theta \\
+x\sin\theta + y\cos\theta
+\end{pmatrix} = \begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}\begin{pmatrix}
+x \\
+y`
+\end{pmatrix}$$
+Therefore, the matrix
+$$\begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}$$`
+is the linear transformation rotating the $x, y$ plane by $\theta$.
+\item[(b)]
+Lemma: Let
+$$\mathcal{M} = \begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}$$
+Then for $k \in\mathbb{Z}$, $$\mathcal{M}^k = \begin{pmatrix}
+\cos(k\theta) & -\sin(k\theta) \\
+\sin(k\theta) & \cos(k\theta)
+\end{pmatrix}$$
+Proof: The statement is trivial if $k = 1$ and $k = 0$. Suppose for $k - 1 > 1$, the statement is true. Then,
+\tiny
+$$\mathcal{M}^k = \begin{pmatrix}
+\cos((k-1)\theta) & -\sin((k-1)\theta) \\
+\sin((k-1)\theta) & \cos((k-1)\theta)
+\end{pmatrix}\begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}$$
+$$= \begin{pmatrix}
+\cos\theta\cos((k-1)\theta) - \sin\theta\sin((k - 1)\theta) & -(\sin\theta\cos((k-1)\theta) + \cos\theta\sin((k-1)\theta)) \\
+\cos\theta\sin((k-1)\theta) + \sin\theta\cos((k-1)\theta) & \cos\theta\cos((k-1)\theta) - \sin\theta\sin((k-1)\theta)
+\end{pmatrix}$$
+$$= \begin{pmatrix}
+\cos((k-1)\theta + \theta) & -\sin((k-1)\theta + \theta) \\
+\sin((k-1)\theta + \theta) & \cos((k-1)\theta + \theta)
+\end{pmatrix} = \begin{pmatrix}
+\cos(k\theta) & -\sin(k\theta) \\
+\sin(k\theta) & \cos(k\theta)
+\end{pmatrix}$$
+\normalsize
+And, for $k < 0$,
+$$\begin{pmatrix}
+\cos(k\theta) & -\sin(k\theta) \\
+\sin(k\theta) & \cos(k\theta)
+\end{pmatrix}\begin{pmatrix}
+\cos(-k\theta) & -\sin(-k\theta) \\
+\sin(-k\theta) & \cos(-k\theta) 
+\end{pmatrix}$$
+$$= \begin{pmatrix}
+\cos^2(k\theta) + \sin^2(k\theta) & \cos(k\theta)\sin(k\theta) - \sin(k\theta)\cos(k\theta) \\
+\sin(k\theta)\cos(k\theta) - \sin(k\theta)\cos(k\theta) & \sin^2(k\theta) + cos^2(k\theta)
+\end{pmatrix}$$
+$$ = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}$$
+Thus, the statement is true for $k < 0$.
+
+Note that 
+$$\varphi(r)^n = \begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}^n = \begin{pmatrix}
+\cos(n\theta) & -\sin(n\theta) \\
+\sin(n\theta) & \cos(n\theta)
+\end{pmatrix} = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} = \varphi(1)$$
+$$\varphi(s)^2 = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}^2 = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} = \varphi(1)$$
+$$\varphi(r)\varphi(s) = \begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix} = \begin{pmatrix}
+-\sin\theta & \cos\theta \\
+\cos\theta & \sin\theta
+\end{pmatrix}$$
+$$= \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}\begin{pmatrix}
+\cos(-\theta) & -\sin(-\theta) \\
+\sin(-\theta) & \cos(-\theta)
+\end{pmatrix} = \varphi(s)\varphi(r)^{-1}$$
+All relations of $D_{2n}$ are satisfied by $\varphi$. Then we can extend $\varphi$ to be:
+$$\varphi(s^ar^b) = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}^a\begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}^b$$
+For $0 \leq a < 2$, $0 \leq b < n$. And
+$$\varphi(s^ar^bs^cr^d) = \varphi(s^{a+c}r^{d-b}) = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}^{a+c}\begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}^{d-b}$$
+$$= \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}^a\begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}^b\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}^c\begin{pmatrix}
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}^d = \varphi(s^ar^b)\varphi(s^cr^d)$$
+Therefore, $\varphi$ is a homomorphism of $D_{2n}$ onto $GL_2(\mathbb{R})$.
+\item[(c)]
+Let $a = r^i$, for $0 \leq i < n$. Then
+$$\varphi(a) = \begin{pmatrix}
+\cos(i\theta) & -\sin(i\theta) \\
+\sin(i\theta) & \cos(i\theta)
+\end{pmatrix}$$
+Note that $\varphi(a) \neq I$ unless $i = 0$. Therefore, for each distinct $r^i$, $\varphi(r^i)$ is also distinct. Let $b = sr^i$, for $0 \leq i < n$. Then
+$$\varphi(b) = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}\begin{pmatrix}
+\cos(i\theta) & -\sin(i\theta) \\
+\sin(i\theta) & \cos(i\theta)
+\end{pmatrix} = \begin{pmatrix}
+\sin(i\theta) & \cos(i\theta) \\
+\cos(i\theta) & -\sin(i\theta)
+\end{pmatrix}$$
+Note that for each distinct $b$, $\varphi(b)$ is also distinct. Furthermore, for any $a$, suppose $\varphi(a) = \varphi(s)$. Then for some $i, k, m$,
+$$\cos(i\theta) = \sin\theta = \cos(\frac{\pi}{2} - \theta) \rightarrow (i + 1)\theta = \frac{\pi}{2} + 2\pi k \rightarrow i = \frac{n}{4} + nk - 1$$
+And
+$$\cos(i\theta) = -\sin(\theta) = \cos(\frac{\pi}{2} + \theta) \rightarrow (i - 1)\theta = \frac{\pi}{2} +2\pi m \rightarrow i = \frac{n}{4} + nm + 1$$
+Since $0 < i < n$, then $k = m = 0$, and therefore we have a contradiction, so $\varphi(a) \neq \varphi(s)$, and also for any $b$, $\varphi(a) \neq \varphi(b)$.
+Therefore, $\varphi$ is injective.
+\end{itemize}
+\item[(26)]
+Note that
+$$\varphi(i)^2 = \begin{pmatrix}
+\sqrt{-1} & 0 \\
+0 & -\sqrt{-1}
+\end{pmatrix}^2 = -I$$
+$$\varphi(j)^2 = \begin{pmatrix}
+0 & -1 \\
+1 & 0
+\end{pmatrix}^2 = -I$$
+$$\varphi(i)^4 = \varphi(j)^4 = I$$
+$$\varphi(i)\varphi(j) = \begin{pmatrix}
+0 & -\sqrt{-1} \\
+-\sqrt{-1} & 0
+\end{pmatrix}$$
+$$\varphi(j)\varphi(i) = \begin{pmatrix}
+0 & \sqrt{-1} \\
+\sqrt{-1} & 0
+\end{pmatrix} = (\varphi(i)\varphi(j))^{-1}$$
+Thus, the relations of $Q_8$ are preserved, and $\varphi$ extends to a homomorphism. In particular, we can extend $\varphi$ to be:
+$$\varphi(1) = I$$
+$$\varphi(-1) = -I$$
+$$\varphi(-i) = \begin{pmatrix}
+-\sqrt{-1} & 0 \\
+0 & \sqrt{-1}
+\end{pmatrix}$$
+$$\varphi(-j) = \begin{pmatrix}
+0 & 1 \\
+-1 & 0
+\end{pmatrix}$$
+$$\varphi(k) = \begin{pmatrix}
+0 & -\sqrt{-1} \\
+-\sqrt{-1} & 0
+\end{pmatrix}$$
+$$\varphi(-k) = \begin{pmatrix}
+0 & \sqrt{-1} \\
+\sqrt{-1} & 0
+\end{pmatrix}$$
+By construction, $\varphi$ is a homomorphism, and is injective.
 \end{itemize}
 \end{document}
