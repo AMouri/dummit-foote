@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\begin{document}
+\title{Introduction to Groups - Group Actions}
+\author{Alec Mouri}
+
+\maketitle
+\section*{Exercises}
+\begin{itemize}
+\item[(1)]
+Let $a = 0$. Then for any $g \in F^\times$,
+$$g0 = g(0 + 0) = g0 + g0 \rightarrow g0 = 0$$
+Trivially, the group action properties hold for $a = 0$.
+
+Let $a \neq 0$. Then for any $g_1, g_2 \in F^\times$, then by the associative law, $(g_1g_2)a = g_1(g_2a)$. And, since 1 is the multiplicative identity, $1a = a$. Therefore, $F^\times$ acts on $F$.
+\item[(2)]
+Consider $z_1, z_2 \in \mathbb{Z}$. By associativity of addition of integers,
+$$(z_1 + z_2) + a = z_1 + (z_2 + a)$$
+Furthermore, since 0 is the additive identity of $\mathbb{Z}$, $0 + a = a$. Therefore, $\mathbb{Z}$ acts on itself.
+\item[(3)]
+Consider $r_1, r_2 \in \mathbb{R}$. Then
+$$r_1(r_2(x, y)) = r_1(x + r_2y, y)$$
+$$ = (x + r_2y + r_1y, y) = (x + (r_1r_2)y, y) = (r_1r_2)(x, y)$$
+Furthermore, since 0 is the additive identity of $\mathbb{R}$, then $0(x, y) = (x + 0y, y) = (x, y)$. Therefore, $\mathbb{R}$ acts on $\mathbb{R}^2$.
+\item[(4)]
+\begin{itemize}
+\item[(a)]
+Let $\mathcal{K}$ be the kernel of the action of $G$ on $A$. Then for any $k \in \mathcal{K}$, $ka = a$. Note that $\mathcal{K} \subseteq G$. Consider $k_1, k_2 \in \mathcal{K}$. Then
+$$(k_1k_2)a = k_1(k_2a) = k_1(a) = a$$
+Thus, $k_1k_2 \in \mathcal{K}$, so $\mathcal{K}$ is closed under the group operation. Furthermore, for any $k \in \mathcal{K}$, then
+$$k^{-1}a = k^{-1}ka = (k^{-1}k)a = 1a = a$$
+Thus, $k^{-1} \in \mathcal{K}$, so $\mathcal{K}$ is closed under inverses. Therefore, $\mathcal{K}$ is a subgroup of $G$.
+\item[(b)]
+Let $\mathcal{S}$ be the stabilizer of $a$ in $G$. Then for any $s \in \mathcal{S}$, $sa = a$. Note that $\mathcal{S} \subseteq \mathcal{K} \subseteq G$. Consider $s_1, s_2 \in \mathcal{S}$. Then
+$$(s_1s_2)a = s_1(s_2a) = s_1(a) = a$$
+Thus, $s_1s_2 \in \mathcal{S}$, so $\mathcal{S}$ is closed under the group operation. Furthermore, for any $s \in \mathcal{S}$, then
+$$s^{-1}a = s^{-1}sa = (s^{-1}s)a = 1a = a$$
+Thus, $s^{-1} \in \mathcal{S}$, so $\mathcal{S}$ is closed under inverses. Therefore, $\mathcal{S}$ is a subgroup of $G$.
+\end{itemize}
+\item[(5)]
+Let $\mathcal{A}$ be the kernel of the action of $G$ on the set $A$, and let $\mathcal{B}$ be the kernel of the permutation representation $\varphi: G \rightarrow S_A$.
+
+Let $g_1 \in \mathcal{A}$. Then for all $a \in A$, $g_1a = a$. And, $\varphi(g_1)(a) = \sigma_{g_1}(a) = g_1a = a$. Thus, $\varphi(g_1) = \sigma_{g_1} = 1$, and $g_1 \in \mathcal{B}$.
+
+Let $g_2 \in \mathcal{B}$. Then $\varphi(g_2) = \sigma_{g_2} = 1$. Then for all $a \in A$, $\varphi(g_2)(a) = g_2a = a$. Thus, $g_2 \in \mathcal{A}$.
+
+We have therefore shown that $\mathcal{A} = \mathcal{B}$.
+\item[(6)]
+Suppose that $G$ acts faithfully on $A$. Then for $g_1, g_2 \in G$ where $g_1 \neq g_2$, and $a \in A$, then $g_1a \neq g_2a$. Since for any $a$, $1a = a$, then for any $g_1 \neq 1$, $g_1a \neq a$. Thus, the kernel of the action only contains the identity.
+
+Suppose the kernel $\mathcal{K}$ of the action only contains the identity, and for sake of contradiction that $G$ does not act faithfully on $A$. Then for $g_1, g_2 \in G$, where $g_1 \neq g_2$, and $a \in A$, then $g_1a = g_2a$. Then $g_2^{-1}g_1a = a$. But since $\mathcal{K}$ only contains the identtiy, then $g_2^{-1}g_1 = 1 \rightarrow g_2 = g_1$, a contradiction. Thus, $G$ must act faithfully on $A$.
+\item[(7)]
+Let $\alpha_1, \alpha_2 \in F^\times$ where $\alpha_1 \neq \alpha_2$, and $v = (r_1, r_2, ..., r_n) \in V$. If $v \neq (0, 0, ..., 0)$, then
+$$\alpha_1v = (\alpha_1r_1, \alpha_1r_2, ..., \alpha_1r_n) \neq (\alpha_2r_1, \alpha_2r_2, ..., \alpha_2r_n) = \alpha_2v$$
+Thus, $\sigma_{\alpha_1} \neq \sigma_{\alpha_2}$, so the action is faithful.
+\item[(8)]
+\begin{itemize}
+\item[(a)]
+Let $\sigma_1, \sigma_2 \in S_A$. Then
+$$\sigma_1(\sigma_2\left\lbrace a_1, ..., a_k\right\rbrace) = \sigma_1\left\lbrace \sigma_2(a_1), ..., \sigma_2(a_k)\right\rbrace$$
+$$= \left\lbrace \sigma_1(\sigma_2(a_1)), ..., \sigma_1(\sigma_2(a_k))\right\rbrace = \left\lbrace (\sigma_1 \circ \sigma_2)(a_1), ..., (\sigma_1 \circ \sigma_2)(a_k) \right\rbrace$$
+$$= (\sigma_1\sigma_2)\left\lbrace a_1, ..., a_k\right\rbrace$$
+Furthermore, $1\left\lbrace a_1, ..., a_k\right\rbrace = \left\lbrace a_1, ..., a_k\right\rbrace$.
+\item[(b)]
+$$(1 \, 2)\left\lbrace \left\lbrace 1, 2 \right\rbrace, \left\lbrace 1, 3 \right\rbrace, \left\lbrace 1, 4 \right\rbrace, \left\lbrace 2, 3 \right\rbrace, \left\lbrace 2, 4 \right\rbrace, \left\lbrace 3, 4 \right\rbrace \right\rbrace$$
+$$= \left\lbrace \left\lbrace 1, 2 \right\rbrace, \left\lbrace 2, 3 \right\rbrace, \left\lbrace 2, 4 \right\rbrace, \left\lbrace 1, 3 \right\rbrace, \left\lbrace 1, 4 \right\rbrace, \left\lbrace 3, 4 \right\rbrace \right\rbrace$$
+$$(1 \, 2 \, 3)\left\lbrace \left\lbrace 1, 2 \right\rbrace, \left\lbrace 1, 3 \right\rbrace, \left\lbrace 1, 4 \right\rbrace, \left\lbrace 2, 3 \right\rbrace, \left\lbrace 2, 4 \right\rbrace, \left\lbrace 3, 4 \right\rbrace \right\rbrace$$
+$$= \left\lbrace \left\lbrace 2, 3 \right\rbrace, \left\lbrace 1, 2 \right\rbrace, \left\lbrace 2, 4 \right\rbrace, \left\lbrace 1, 3 \right\rbrace, \left\lbrace 3, 4 \right\rbrace, \left\lbrace 1, 4 \right\rbrace \right\rbrace$$
+\end{itemize}
+\item[(9)]
+\begin{itemize}
+\item[(a)]
+Let $\sigma_1, \sigma_2 \in S_A$. Then
+$$\sigma_1(\sigma_2(a_1, ..., a_k)) = \sigma_1(\sigma_2(a_1), ..., \sigma_2(a_k))$$
+$$= ( \sigma_1(\sigma_2(a_1)), ..., \sigma_1(\sigma_2(a_k))) = ((\sigma_1 \circ \sigma_2)(a_1), ..., (\sigma_1 \circ \sigma_2)(a_k))$$
+$$= (\sigma_1\sigma_2)(a_1, ..., a_k)$$
+Furthermore, $1(a_1, ..., a_k) = (a_1, ..., a_k)$.
+\item[(b)]
+\tiny{
+$$(1 \, 2)\left\lbrace (1, 1), (1, 2), (1, 3), (1, 4), (2, 1), (2, 2), (2, 3), (2, 4), (3, 1), (3, 2), (3, 3), (3, 4), (4, 1), (4, 2), (4, 3), (4, 4) \right\rbrace$$
+$$= \left\lbrace (2, 2), (2, 1), (2, 3), (2, 4), (1, 2), (1, 1), (1, 3), (1, 4), (3, 2), (3, 1), (3, 3), (3, 4), (4, 2), (4, 1), (4, 3), (4, 4) \right\rbrace$$
+$$(1 \, 2 \, 3)\left\lbrace (1, 1), (1, 2), (1, 3), (1, 4), (2, 1), (2, 2), (2, 3), (2, 4), (3, 1), (3, 2), (3, 3), (3, 4), (4, 1), (4, 2), (4, 3), (4, 4) \right\rbrace$$
+$$= \left\lbrace (2, 2), (2, 3), (2, 1), (2, 4), (3, 2), (3, 3), (3, 1), (3, 4), (1, 2), (1, 3), (1, 1), (1, 4), (4, 2), (4, 3), (4, 1), (4, 4) \right\rbrace$$
+}
+\end{itemize}
+\item[(10)]
+\begin{itemize}
+\item[(a)]
+Suppose $n = 1$. Clearly, for $k = 1$, the action of $S_1$ is faithful.
+
+Suppose $k < n$. Let $\sigma_1, \sigma_2 \in S_n$ where $\sigma_1 \neq \sigma_2$. Let $v = \left\lbrace a_1, ..., a_k \right\rbrace$. For some $\alpha$, $\sigma_1(\alpha) \neq \sigma_2(\alpha) \rightarrow \sigma_2^{-1}(\sigma_1(\alpha)) \neq \alpha$. Thus there exists some $v$ with $\alpha \in v$ such that $\sigma_2^{-1}(\sigma_1(\alpha)) \not \in v$. Clearly, $\sigma_1(\alpha) \in \sigma_1v$, but $\sigma_2(\sigma_2^{-1}(\sigma_1(\alpha)) \not \in \sigma_2v \rightarrow \sigma_1(\alpha) \not \in \sigma_2v$. Therefore, $\sigma_1, \sigma_2$ do not perform the same action on $v$, so therefore $S_n$ is faithful on $k$-subsets where $k < n$.
+
+Suppose $k = n$. Consider $\sigma = (1 \, 2 \, ... \, n) \in S_n$, and $v = \left\lbrace a_1, ..., a_k \right\rbrace$. Then for each $a_i$, if $a_i = n$, then $\sigma(a_i) = 1$, otherwise $\sigma(a_i) = a_i + 1$. Furthermore, if $a_i = 1$, then $\sigma^{-1}(a_i) = n$, otherwise $\sigma^{-1}(a_i) = a_i - 1$. In particular, $\sigma \neq \sigma^{-1}$, and for all $a_i$, $\sigma(a_i) \neq a_i$, and $\sigma^{-1}(a_i) \neq a_i$, and furthermore $\sigma$ and $\sigma^{-1}$ are both bijections. Therefore, $\sigma v = \sigma^{-1} v = v$. Therefore, $S_n$ is not faithful on $n$-subsets.
+\item[(b)]
+Let $\sigma_1, \sigma_2 \in S_n$ where $\sigma_1 \neq \sigma_2$. Let $v = (a_1, ..., a_k)$. For some $\alpha$, $\sigma_1(\alpha) \neq \sigma_2(\alpha)$. Choose some $v$ such that $a_1 = \alpha$. Then
+$$\sigma_1(\alpha, ..., a_k) = (\sigma_1(\alpha), ...,\sigma_1(a_k)) \neq (\sigma_2(\alpha), ..., \sigma_2(a_k)) = \sigma_2(\alpha, ..., a_k)$$
+Therefore, the action of $S_n$ on ordered $k$-tuples is faithful for all $k \geq 1$.
+\end{itemize}
+\item[(11)]
+$$1 \mapsto 1$$
+$$r \mapsto (1 \, 2 \, 3 \, 4)$$
+$$r^2 \mapsto (1 \, 3)(2 \, 4)$$
+$$r^3 \mapsto (1 \, 4 \, 3 \, 2)$$
+$$s \mapsto (2 \, 4)$$
+$$sr \mapsto (1 \, 2)(3 \, 4)$$
+$$sr^2 \mapsto (1 \, 3)$$
+$$sr^3 \mapsto (1 \, 4)(2 \, 3)$$
+\item[(12)]
+Let $A$ be the set of unordered pairs of opposing vertices of a regular $n$-gon with fixed labels $N = \left\lbrace 1, 2, ..., \right\rbrace$. Define $\tau: D_{2n} \times N \rightarrow N$ as, for $g \in D_{2n}$, and $a \in N$, then $\tau_g(a) = \sigma_g(a) = ga$, where $\sigma_g$ is the permutation of $N$ induced by $g$, ie. $\sigma_{r^i}(a) = \overline{a + i}$, and $\sigma_{sr^i}(a) = \overline{-a - i}$. Note that $\tau$ is a group action: since $\tau_r^n(a) = a \rightarrow \tau_r^n = 1$, $\tau_s^2(a) = a \rightarrow \tau_s^2 = 1$, and $\tau_r\tau_s(a)  = \tau_r(\overline{-a}) = \overline{-a + 1} = \tau_s(\overline{a - 1}) = \tau_s\tau_r^{-1}(a)$, then $\tau_g$ is a group homomorphism and therefore satisfies the group action axioms.
+
+Define $\varphi: D_{2n} \times A \rightarrow A$ as, for $g \in D_{2n}$ and $(a, b) \in A$ (Note that if $a > n/2$, then $b = a - n/2$, otherwise $b = a + n/2$): $\varphi_g((a, b))) = g(a, b) = (\tau_g(a), \tau_g(b)) = (ga, gb)$. Note that
+$$(cd)(a, b) = ((cd)a, (cd)b)$$
+$$ = (c(da), c(db)) = c(da, db) = c(d(a, b))$$
+And
+$$1(a, b) = (1a, 1b) = (a, b)$$
+Thus, $D_{2n}$ acts on $A$.
+
+Denote the kernel of the action as $\mathcal{K}$.
+
+Suppose $n = 2$. Then $\mathcal{A} = \left\lbrace (1, 2) \right\rbrace$, so therefore $\mathcal{K} = \left\lbrace 1, r, s, sr \right\rbrace$
+
+Suppose $n = 4$.  By direct computation, we can find that $mathcal{K} = \left\lbrace 1, r^2, s, sr^2 \right\rbrace$.
+
+Suppose $n > 4$. Note that if $g(a, b) = (a, b)$, then either:
+
+1. $ga = a$ and $gb = b$, so $g = 1$. Or, 
+
+2. $ga = b$ and $gb = a$, ie. using the notation for equivalence classes mod $n$, $g\overline{a} = \overline{a + n/2}$ and $g\overline{a + n/2} = a$.If $g$ is a power of $r$, then for some $1 \leq i < n$, $\overline{a + i} = \overline{a + n/2}$, and $\overline{a + n/2 + i} = a$. So, $g = r^{n/2}$. If $g$ is not a power of $r$, then for some $0 \leq i < n$, $g = sr^i$. Then we have $\overline{-(a + i)} = \overline{a + n/2}$, and $\overline{-(a+ n/2 + i)} = \overline{a}$. By the first equation, we have $\overline{i} = \overline{-2a - n/2}$, and by the second equation, we have $\overline{i} = \overline{-2a - n/2}$. If $a = 0$, then $\overline{i} = \overline{-n/2}$. But if $a = 1$, then $\overline{i} = \overline{-2 - n/2}$ Therefore, $\overline{-n/2} = \overline{-2 - n/2}$, or $\overline{0} = \overline{2}$. But then $n = 2$, a contradiction. Thus $g \neq sr^i$.
+
+Thus, the kernel $\mathcal{K}$ of the action is
+$$\mathcal{K} = \left\lbrace 1, r^{n/2} \right\rbrace$$
+\item[(13)]
+Let $g, a \in G$. For any $a$, then $ga = a$ only if $g = 1$ by right multiplication. Therefore, the kernel $\mathcal{K}$ of the action is
+$$\mathcal{K} = \left\lbrace 1 \right\rbrace$$
+\item[(14)]
+Suppose $ga = ag$ is a group action. Then for $g_1, g_2 \in G$, 
+$$a(g_1g_2) = (g_1g_2)a = g_1(g_2a) = (g_2a)g_1 = (ag_2)g_1 = a(g_2g_1)$$
+But then $g_1g_2 = g_2g_1$. A contradiction, since $G$ is non-abelian. Therefore $ga = ag$ is not a group action.
+\item[(15)]
+Let $g_1, g_2 \in G$. Then
+$$(g_1g_2)a = a(g_1g_2)^{-1} = ag_2^{-1}g_1^{-1} = (ag_2^{-1})g_1^{-1} = g_1(ag_2^{-1}) = g_1(g_2a))$$
+And
+$$1a = a1^{-1} = a$$
+Thus, $ga = ag^{-1}$ satisfies the left group axioms.
+\item[(16)]
+Let $g_1, g_2 \in G$. Then
+$$(g_1g_2)a = (g_1g_2)a(g_1g_2)^{-1} = g_1g_2ag_2^{-1}g_1^{-1}$$
+$$= g_1(g_2ag_2^{-1}) = g_1(g_2a)$$
+And
+$$1a = 1a1^{-1} = a$$
+Thus, $ga = gag^{-1}$ satisfies the left group axioms.
+\item[(17)]
+For fixed $g \in G$, note that $x \mapsto gxg^{-1}$ induces a permutation $\sigma_g \in S_G$ in $G$. Therefore, conjugation by $g$ is an automorphism in $G$.
+
+From Chapter 1, Section 6, Exercise 2, it follows that $|x| = |gxg^{-1}|$, and therefore that for any $A \subseteq G$, $|A| = |gAg^{-1}|$.
+\item[(18)]
+Reflexive: Since $a = 1a$, then $a \sim a$
+
+Symmetric: Suppose $a \sim b$. Then $a = hb \rightarrow h^{-1}a = b$m and $b \sim a$ 
+
+Transitive: Suppose $a \sim b$ and $b \sim c$. Then $a = h_1b$ and $b = h_2c$, and $a = h_1h_2c$. Thus, $a \sim c$.
+
+Thus, $\sim$ is an equivalence relation.
+\item[(19)]
+Denote the map $h \mapsto hx$ as $\varphi$. Let $h_1, h_2 \in H$. If $h_1 \neq h_2$, then clearly $h_1x \neq h_2x$, so $\varphi$ is injective.
+
+Let $o \in \mathcal{O}$. By definition, there exists some $h \in H$ such that $o = hx$, ie. $ox^{-1} = h$. Then $\varphi(ox^{-1}) = o$. So $\varphi$ is surjective.
+
+If $G$ is a finite group and $H$ is a subgroup of $G$, then $H$ induces a set $\left\lbrace \mathcal{O}_x \right\rbrace$, where $\mathcal{O}_x$ is the orbit of $x$ under the action of $H$. Let $n$ be the cardinality of $\left\lbrace \mathcal{O}_x \right\rbrace$ Since the orbits of $x$ partition $G$, and since all orbits have cardinality $|H|$, then
+$$|G| = \sum_x |O_x| = n|H|$$
+Thus, $|H|$ divides $|G|$.
+\item[(20)]
+The isometries of the tetrahedron are represented by the following permutations:
+
+1, (2 3 4), (2 4 3), (1 2 3), (1 3 2), (1 2 4), (1 4 2), (1 3 4), (1 4 3), (1 2)(3 4), (1 3)(2 4), (1 4)(2 3)
+
+\item[(21)]
+Let the pairs of opposite vertices of the cube be labeled as:
+$$\left\lbrace (1, 7), (2, 8), (3, 5), (4, 6) \right\rbrace$$
+If $\theta, \tau \in G$ are rigid motions, for each pair $(a, b)$ of opposing vertices:
+$$\theta(a, b) = (\theta(a), \theta(b))$$
+Note that
+$$\theta(\tau(a), \tau(b)) = (\theta(\tau(a)), \theta(\tau(b))) = ((\theta \circ \tau)(a), (\theta \circ \tau)(b)) = (\theta \circ \tau)(a, b)$$
+Since we have found a homomorphism, we have a group action of $G$ on $S_4$ as a function $\varphi: G \rightarrow S_4$. Furthermore, suppose $\theta \neq \tau$. Then for some vertex $a$, $\theta(a) \neq \tau(a)$. Furthermore, for the vertex opposite of $x$, $b$, then $\theta(b) \neq \tau(b)$. Therefore, $\theta(a, b) \neq \tau(a, b)$, so therefore the action is faithful. So, $\varphi$ is injective. And, since $|S_4| = 24 = |G|$, then $\varphi$ is surjective. Thus, $\varphi$ is a bijection, and is an isomorphism. Thus, $G \cong S_4$.
+\item[(22)]
+Let the pairs of opposite faces of the octahedron be labeled as:
+$$\left\lbrace (A, B), (C, D), (E, F), (G, H) \right\rbrace$$
+If $\theta, \tau \in G$ are rigid motions, for each pair $(a, b)$ of opposing faces:
+$$\theta(a, b) = (\theta(a), \theta(b))$$
+Note that
+$$\theta(\tau(a), \tau(b)) = (\theta(\tau(a)), \theta(\tau(b))) = ((\theta \circ \tau)(a), (\theta \circ \tau)(b)) = (\theta \circ \tau)(a, b)$$
+Since we have found a homomorphism, we have a group action of $G$ on $S_4$ as a function $\varphi: G \rightarrow S_4$. Furthermore, suppose $\theta \neq \tau$. Then for some face $a$, $\theta(a) \neq \tau(a)$. Furthermore, for the face opposite of $x$, $b$, then $\theta(b) \neq \tau(b)$. Therefore, $\theta(a, b) \neq \tau(a, b)$, so therefore the action is faithful. So, $\varphi$ is injective. And, since $|S_4| = 24 = |G|$, then $\varphi$ is surjective. Thus, $\varphi$ is a bijection, and is an isomorphism. Thus, $G \cong S_4$.
+\item[(23)]
+If the action of the group of rigid motions of a cube on the set of three pairs of opposite faces is faithful, then the mapping from rigid motions to $S_3$ is injective. But since $|S_3| = 6 < 24$, then no such mapping exists. So, the action must not be faithful.
+
+Each vertex, after undergoing a rigid motion, must either lie on the same face or on its opposite face in order for the rigid motion to be in the kernel. Therefore, we have the kernel:
+$$\mathcal{K} = \left\lbrace 1, (1 \, 2 \, 3 \, 4)(5 \, 6 \, 7\, 8), (1 \, 4 \, 3 \, 2)(5 \, 8 \, 7 \, 6), \right.$$
+$$\left. (1 \, 3)(2 \, 4)(5 \, 7)(6 \, 8), (1 \ 5)(2 \, 6)(3 \, 7)(4  \, 6), (1 \, 6)(2 \, 5)(3 \, 8)(4 \, 7), \right.$$
+$$\left. (1 \, 7)(2 \, 8)(3 \, 5)(4 \, 6), (1 \, 8)(2 \, 7)(3 \, 6)(4 \, 5) \right\rbrace$$
+\end{itemize}
+\end{document}
