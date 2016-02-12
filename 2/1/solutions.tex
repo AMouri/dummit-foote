@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\begin{document}
+\title{Subgroups - Definition and Examples}
+\author{Alec Mouri}
+
+\maketitle
+\section*{Exercises}
+\begin{itemize}
+\item[(1)]
+Let $H$ be the specified subset of the group $G$.
+\begin{itemize}
+\item[(a)]
+Since $0 \in H$, then $H \neq \emptyset$. Let $x = a + ai, x = b + bi$. Clearly, $A, B \in H$. And, $-b - bi = y^{-1}$. Then, 
+$$xy^{-1} = a + ai + -b - bi = (a-b) + (a-b)i \in H$$
+Thus, by the Subgroup Criterion $H \leq G$
+\item[(b)]
+Since $1 \in H$, then $H \neq \emptyset$. Let $x = a + bi$, $y = c + di$, where $x, y \in H$. In particular, $a^2 + b^2 = c^2 + d^2 = 1$. Note that $y^{-1} = (c^2 + d^2)^{-1}(c - di) = c - di$. Then,
+$$xy^{-1} = (a + bi)(c - di) = ac + bd + (bc - ad)i$$
+Since 
+$$(ac + bd)^2 + (bc - ad)^2 = a^2c^2 + 2abcd + b^2d^2 + b^2c^2 - 2abcd + a^2d^2$$ 
+$$= a^2(c^2 + d^2) + b^2(c^2 + d^2) = a^2 + b^2 = 1$$
+Then $xy^{-1} \in H$. Thus, by the Subgroup Criterion $H \leq G$
+\item[(c)]
+Note that $0 = \frac{0}{n} \in H$, so $H \neq \emptyset$. Suppose $p, q | n$. If $n = \alpha_1^{\beta_1}\alpha_2^{\beta_2}...\alpha_k^{\beta_k}$, where each $\alpha_i$ is a distinct prime, and $\beta_i \geq 1$, then $p = \alpha_1^{\delta_1}\alpha_2^{\delta_2}...\alpha_k^{\delta_k}$ and $q = \alpha_1^{\gamma_1}\alpha_2^{\gamma_2}...\alpha_k^{\gamma_k}$, where for each $i$, $0 \leq \delta_i, \gamma_i \leq \beta_i$. Let $x = \frac{a}{p}, y = \frac{b}{q} \in H$. Note that $y^{-1} = \frac{-b}{q}$. Let $g = gcd(p, q)$. Then $p = gc$ and $q = gd$. Let $\ell = lcm(p, q)$, so that $g\ell = pq$. Then
+$$xy^{-1} =  \frac{a}{p} + \frac{-b}{q} = \frac{aq - bp}{pq} = \frac{g(ac - bd)}{g\ell} = \frac{ac - bd}{\ell}$$
+
+Clearly, $\ell | n$, so therefore $xy^{-1} \in H$. Thus, by the Subgroup Criterion, $H \leq G$.
+\item[(d)]
+Note that $0 = \frac{0}{n} \in H$, so $H \neq \emptyset$. Suppose for $p, q \in \mathbb{Z}^+$, $gcd(p,n) = gcd(q, n) = 1$. Note that for $w, x, y, z \in \mathbb{Z}$, then $wp + xn = yq + zn = 1$. Then
+$$1 = (wp + xn)(yq + zn) = wypq + xynq + wznp + xzn^2$$
+$$= pq(wy) + n(xyq + wzp + xzn) \rightarrow gcd(pq, n) = 1$$
+Let $x = \frac{a}{p}, y = \frac{b}{q} \in H$. Note that $y^{-1} = \frac{-b}{q}$. Then,
+$$xy^{-1} = \frac{a}{p} + \frac{-b}{q} = \frac{aq - bp}{pq} \in H$$
+Thus, by the Subgroup Criterion, $H \leq G$. 
+\item[(e)]
+Note that $1^2 = \frac{1}{1} \rightarrow 1 \in H$, so $H \neq \emptyset$. Let $a, b \in H$, where $a^2 = \frac{w}{x}$ and $b^2 = \frac{y}{z}$. Note that $b^{-1} = b\frac{z}{y}$, and $(ab)^2 = a^2b^2 = \frac{wy}{xz} \in H$, so
+$$(ab^{-1})^2 = (ab\frac{z}{y})^2 = \frac{wz}{xy} \rightarrow ab^{-1} \in H$$
+Thus, by the Subgroup Criterion, $H \leq G$.
+\end{itemize}
+\item[(2)]
+Let $H$ be the specified subset of the group $G$.
+\begin{itemize}
+\item[(a)]
+Consider $x = (1 \, 2) \in H$. Then $xx^{-1} = 1$, But, $1 \not \in H$, so $H$ is not a subgroup of $G$.
+\item[(b)]
+Consider $x = s \in H$. Then $ss^{-1} = 1$, But, $1 \not \in H$, so $H$ is not a subgroup of $G$.
+\item[(c)]
+Consider $x \in H$. Then $x^n = 1$, where $n = ab$. But then $(x^a)^b = 1$, so $x^a$ has order at most $b$, and $x^a \not \in H$. Thus $H$ is not a subgroup of $G$.
+\item[(d)]
+Note that $1 \in H$, but $1 + 1 = 2 \not \in H$, so $H$ is not closed under addition. Thus, $H$ is not a subgroup of $G$.
+\item[(e)]
+Consider $\sqrt{2}$ and $\sqrt{3}$. Then 
+$$(\sqrt{2} - \sqrt{3})^2 = 2 - 2\sqrt{6} + 3 = 5 - 2\sqrt{6}$$
+Since $\sqrt{2} - \sqrt{3} \not \in H$, then $H$ is not a subgroup of $G$.
+\end{itemize}
+\item[(3)]
+\begin{itemize}
+\item[(a)]
+Let $H = \left\lbrace s^ar^b | 0 \leq a \leq 1, b \in \left\lbrace 0, 2 \right\rbrace \right\rbrace$. Clearly, $H \neq \emptyset$. $x = s^ar^b, y = s^cr^d \in H$. Th`en
+$$xy^{-1} = s^ar^br^{-d}s^{-c} = s^ar^{b - d}s^{-c} = s^{a-c}r^{d-b}$$
+If $a = c$, then $s^{a-c} = 1$. If $a > c$, then $s^{a-c} = s$. If $a < c$, then $s^{a-c} = s^{-1} = s$.
+
+If $d = b$, then $r^{d-b} = 1$. If $d > b$, then $r^{d - b} = r^2$. If $d < b$, then $r^{d - b} = r^{-2} = r^2$.
+
+Thus, $xy^{-1} \in H$, so by the Subgroup Criterion $H \leq D_8$.
+\item[(b)]
+Let $H = \left\lbrace s^ar^b | 0 \leq a \leq 1, b \in \left\lbrace a, a + 2 \right\rbrace \right\rbrace$. Clearly, $H \neq \emptyset$. $x = s^ar^b, y = s^cr^d \in H$. Then
+$$xy^{-1} = s^ar^br^{-d}s^{-c} = s^ar^{b - d}s^{-c} = s^{a-c}r^{d-b}$$
+If $a = 0, c = 0, b = 0, d = 0$, then $xy^{-1} = 1$
+
+If $a = 0, c = 0, b = 2, d = 0$, then $xy^{-1} = r^2$
+
+If $a = 0, c = 0, b = 0, d = 2$, then $xy^{-1} = r^2$
+
+If $a = 0, c = 0, b = 2, d = 2$, then $xy^{-1} = 1$
+
+If $a = 1, c = 0, b = 1, d = 0$, then $xy^{-1} = sr^3$
+
+If $a = 1, c = 0, b = 3, d = 0$, then $xy^{-1} = sr$
+
+If $a = 1, c = 0, b = 1, d = 2$, then $xy^{-1} = sr$
+
+If $a = 1, c = 0, b = 3, d = 2$, then $xy^{-1} = sr^3$
+
+If $a = 0, c = 1, b = 0, d = 1$, then $xy^{-1} = sr$
+
+If $a = 0, c = 1, b = 2, d = 1$, then $xy^{-1} = sr^3$
+
+If $a = 0, c = 1, b = 0, d = 3$, then $xy^{-1} = sr^3$
+
+If $a = 0, c = 1, b = 2, d = 3$, then $xy^{-1} = sr$
+
+If $a = 1, c = 1, b = 1, d = 1$, then $xy^{-1} = 1$
+
+If $a = 1, c = 1, b = 3, d = 1$, then $xy^{-1} = r^2$
+
+If $a = 1, c = 1, b = 1, d = 3$, then $xy^{-1} = r^2$
+
+If $a = 1, c = 1, b = 3, d = 3$, then $xy^{-1} = 1$
+
+
+Thus, $xy^{-1} \in H$, so by the Subgroup Criterion $H \leq D_8$.
+\end{itemize}
+\item[(4)]
+Consider $\mathbb{Z}$ and $\mathbb{Z}^+$, but under addition. Clearly, $\mathbb{Z}$ is a group, and $\mathbb{Z}^+ \subset \mathbb{Z}$, and $|\mathbb{Z}^+| = \infty$. Furthermore, for $a, b \in \mathbb{Z}^+$, then $a + b > a$ and $a + b > b$, so $a + b \in \mathbb{Z}^+$, and $\mathbb{Z}^+$ is closed under addition. But, since $0 \not \in \mathbb{Z}^+$, then $\mathbb{Z}^+$ is not a subgroup of $\mathbb{Z}$.
+\item[(5)]
+Suppose $H$ is a subgroup of $G$ where $|H| = n - 1$. Then there exists precisely one $\alpha \in G$ such that $\alpha \not \in H$. Let $x \in H$ be a nonidentity element. If $x\alpha = y \in H$, then $\alpha = yx^{-1}$. But since $H$ is a subgroup, then $\alpha \in H$, a contradiction. If $x\alpha \not \in H$, then $x\alpha = \alpha \rightarrow x = 1$, another contradiction. Therefore, $H$ cannot exist.
+\item[(6)]
+Let $H = \left\lbrace g \in G | |g| < \infty \right\rbrace$. Since $1 \in H$, then $H \neq \emptyset$. Let $h_1, h_2 \in H$. Since $H$ is abelian, then
+$$(h_1h_2^{-1})^{|h_1||h_2|} = h_1^{|h_1||h_2|}h_2^{-|h_1||h_2|} (h_1^{|h_1|})^{|h_2|}(h_2^{|h_2|})^{-|h_1|} = 1$$
+Thus, $h_1h_2^{-1} \in H$, so therefore $H \leq G$.
+
+Consider the infinite dihedral group $D_\infty$: $\left\lbrace r, s | s^2 = 1, rs = sr^{-1} \right\rbrace$. Let $H = \left\lbrace g \in D_\infty | |D_\infty| < \infty \right\rbrace$. Observe that $D_\infty$ is non-abelian. Note that $s^2 = 1$, and $(rs)^2 = rsrs = rr^{-1}s^2 = 1$, so $s, rs \in H$. But, $(rs)s = r$. Since $r$ has infinite order, then $r \not \in H$, so $H$ is not a subgroup of $G$.
+\item[(7)]
+Note that for $a \in \mathbb{Z}$, then $|a| = \infty$ if and only if $a \neq 0$. And for $b \in \mathbb{Z}/n\mathbb{Z}$, then $|b| \leq n$. Thus, the torsion subgroup of $\mathbb{Z} \times (\mathbb{Z}/n\mathbb{Z})$ is $\left\lbrace (0, a) | a \in \mathbb{Z}/n\mathbb{Z} \right\rbrace$.
+
+Note that $(1, 1) + (-1, 1) = (0, 2)$ is not in the set of elements of infinite order with the identity. Therefore, the set is not closed under addition, and therefore is not a subgroup.
+\item[(8)]
+Suppose $H \cup K$ is a subgroup. Suppose for sake of contradiction that $H \cap K \neq H$ and $H \cap K \neq K$. Then we have $h \in H$ where $h \not \in K$, and $k \in K$ where $k \not \in H$. Then either $hk \in H$ or $hk \in K$. If $h' = hk \in H$, then $k = h^{-1}h' \in H$, a contradiction. Similarly, if $k' = hk \in K$, then $h = k'k^{-1} \in K$, a contradiction. Thus, either $H \cap K \subseteq H$ or $H \cap K \subseteq K$. Ie. either $H \subseteq K$ or $K \subseteq H$.
+
+Suppose without loss of generality that $H \subseteq K$. Then $H \cup K = K$, so therefore $H \cup K$ is a subgroup.
+\item[(9)]
+Since $I \in SL_n(F)$, then $SL_n(F) \neq \emptyset$. For $A, B \in SL_n(F)$, $\det(AB^{-1}) = \det(A)\det(B^{-1}) = \det(A)\det(B)^{-1} = 1$. Thus, $AB^{-1} \in SL_n(F)$. Thus by the subgroup criterion, $SL_n(F) \leq GL_n(F)$.
+\item[(10)]
+\begin{itemize}
+\item[(a)]
+
+\end{itemize}
+\end{itemize}
+\end{document}
