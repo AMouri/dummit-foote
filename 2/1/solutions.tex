@@ -151,5 +151,20 @@ Note that clearly $H \in 0$. Suppose $H \neq 0$. Let $\frac{p}{q} \in H$ such th
 Let $H = \{ x \in D_{2n} | x^2 = 1 \}$. Note that since $s^2 = 1$ and $(sr)^2 = 1$, so $s, sr \in H$. But, $ssr = r \not \in H$, so $H$ is not closed under the group operation. Thus $H$ is not a subgroup of $D_{2n}$.
 \item[(15)]
 Note that $\cup_{i=1}^\infty H_i \neq \emptyset$. Let $x, y \in \cup_{i=1}^\infty H_i$. Then for some $1 \leq a \leq b < \infty$, we can say without loss of generality that $x \in H_a, y \in H_b$. Then $x \in H_b$. So, $xy^{-1} \in H_b$, and $xy^{-1} \in \cup_{i=1}^\infty H_i$. Thus by the Subgroup Criterion, $\cup_{i=1}^\infty H_i \leq G$
+\item[(16)]
+Let $H$ be the set of $n \times n$ upper triangular matrices. Note that $I \in H$, so $H \neq \emptyset$. We shall now prove a few lemmas:
+
+Lemma 1: Let $A_n \in H$. Then $\det(A) = \prod_{i}^n a_{ii}$. In particular, the diagonal entries $a_{ii}$ of $A$ are all nonzero. Proof: If $n = 1$, then $\det(A_1) = n_{11}$, so the lemma is true. Suppose the lemma is true for $n - 1$. Then, 
+$$\det(A_n) = \sum_{k=1}^{n}(-1)^{n + k}a_{n k}\det(D_{n, k})$$
+where $D_{n, k}$ is the resulting matrix from deleting the $n$th row and the $k$th column. Since $a_{n k} = 0$ for $k < n$, then $\det(A_n) = (-1)^{2n}a_{nn}\det(D_{n, k}) = a_{nn}\det(D_{n, k})$. Since $D_{n, k}$ is upper triangular, then $D_{n, k} = \prod_{i=1}^{n-1}a_{ii}$. Thus, $\det(A_n) = \prod_{i=1}^n a_{ii}$.
+
+Lemma 2: If $A, B \in H$, then $AB \in H$. Proof: Let $C = AB$. Then for $i, j$, $c_{ij} = \sum_{x = 1}^{n} a_{ix}b_{xj}$. Suppose $i > j$. Then for $i < x$, then $a_{ix} = 0$, and for $j > x$, then $b_{xj} = 0$. Thus, $c_{ij} = 0$. Suppose $i = j$. Then $c_{ij} = \sum_{x=1}^n a_{ix}b_{xi}$ For $i < x$, then $a_{ix} = 0$, and for $i > x$, then $b_{xi} = 0$, so $c_{ij} = a_{ii}b_{ii} \neq 0$. Thus, $\det(AB) \neq 0$, $AB$ is upper triangular, and therefore $AB \in H$.
+
+Lemma 3: If $A \in H$, then $B = A^{-1} \in H$. Proof: 
+It sufficies to show that $B_{ij} = 0$ for $i > j$. Let $i = n$. Then for all $j$, $0 = (AB)_{nj} = \sum_{k=1}^n A_{nk}B_{kj} = A_{nn}B_{kj} \rightarrow B_{kj} = 0$: the last implication is from Lemma 1. Now suppose for some $i + 1$, $B_{i+1, j} = 0$ for $i+1 > j$. Then for all $j$, $0 = (AB)_{ij} = \sum_{k=1}^n A_{ik}B_{kj} = \sum_{k=1}^i A_{ik}B_{kj} = A_{ii}B_{ki} \rightarrow B_{ki} = 0$.
+
+Consider first the last row of $A$ and the first column of $B$. Then $I_{n1} = 0 = (AB)_{n1} = \sum_{i=1}^n A_{ni}B_{i1} = A_{nn}B_{n1}$. Since $A_{nn} \neq 0$, then $B_{n1} = 0$. So, now consider the $i$th row of $A$ and the first column of $B$: suppose for some $i > 1$, that for all $k > i$ that $B_{k1} = 0$. Then, $0 = (AB)_{i1} = \sum_{j=1}^n A_{ij}B_{j1} = A_{ii}B_{i1} \rightarrow B_{i1} = 0$. Now consider the first row of $A$ and the first column of $B$: $1 = (AB)_{11} = \sum_{i=1}^n A_{1i}B_{i1} = A_{11}B_{11} \rightarrow B_{11} \neq 0$. 
+
+Let $A, B \in H$. Then by Lemmas 2 and 3, $AB^{-1} \in H$. Thus by the Subgroup Criterion, $H \leq GL_n(F)$. 
 \end{itemize}
 \end{document}
