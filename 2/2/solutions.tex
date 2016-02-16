@@ -1,0 +1,16 @@
+\documentclass[12pt]{article}
+\begin{document}
+\title{Subgroups - Centralizers and Normalizers, Stabilizers and Kernels}
+\author{Alec Mouri}
+
+\maketitle
+\section*{Exercises}
+\begin{itemize}
+\item[(1)]
+Let $\mathcal{H} = \{ g \in G | g^{-1}ag = a, \forall a \in A \}$. Suppose $h \in H$. Then for all $a \in A$, 
+$$h^{-1}ah = a \rightarrow ah = ha \rightarrow a = hah^{-1}$$
+Thus, $h \in C_G(A)$, and $\mathcal{H} \subseteq C_G(A)$. Now suppose $c \in C_G(A)$. Then for all $a \in A$,
+$$cac^{-1} = a \rightarrow ca = ac \rightarrow a = c^{-1}ac$$
+Thus, $c \in \mathcal{H}$, and $C_G(A) \subseteq \mathcal{H}$. Thus, $C_G(A) = \mathcal{H}$.
+\end{itemize}
+\end{document}
